@@ -1,0 +1,30 @@
+Project Title: B&G Bus Tracker
+Objective: Develop a real-time application to track B&G buses, show their current locations, and display the number of passengers onboard.
+Target Audience: Students and administrators.
+Primary Features:
+	•	Real-time bus location tracking.
+	•	Passenger occupancy details.
+	•	User-friendly web and mobile interface.
+
+2. Requirements Analysis
+
+Functional Requirements
+
+	1.	Display real-time location of all active buses on a map.
+	2.	Show passenger count for each bus.
+	3.	Authenticate users (students and admins).
+	4.	Provide route and stop details for each bus.
+	5.	Notifications for bus arrival or schedule changes.
+
+Non-Functional Requirements
+
+	1.	Scalability to accommodate future buses or students.
+	2.	Real-time updates within 2-5 seconds latency.
+	3.	Secure user data and API endpoints.
+	4.	Mobile-friendly design.
+
+Hardware Requirements
+
+	1.	GPS trackers for buses.
+	2.	IoT-enabled devices for passenger counting (optional: infrared sensors or manual updates).
+	3.	Cloud server for hosting backend APIs.
