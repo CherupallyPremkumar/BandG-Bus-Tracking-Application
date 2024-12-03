@@ -1,0 +1,20 @@
+@startuml
+actor Driver
+entity MobileApp
+entity Backend
+entity GPSService
+
+Driver -> MobileApp: Logs in
+MobileApp -> Backend: Sends login request with credentials
+Backend -> MobileApp: Returns authentication token (JWT)
+
+Driver -> MobileApp: Starts bus tracking
+MobileApp -> GPSService: Requests GPS data every 5 seconds
+GPSService -> MobileApp: Returns current GPS coordinates (latitude, longitude)
+MobileApp -> Backend: Sends GPS data (latitude, longitude) via WebSocket or HTTP POST
+Backend -> Database: Stores GPS data
+Backend -> MobileApp: Acknowledgement (status success)
+
+note right of MobileApp: This process repeats every 5 seconds
+
+@enduml

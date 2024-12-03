@@ -1,0 +1,139 @@
+B&G Bus Tracking Application - Schema Documentation
+
+This document provides an overview of the schema design for the B&G Bus Tracking Application. It describes the tables, their relationships, and the statuses associated with various entities in the application. This documentation will help developers understand the database structure, relationships, and how data flows within the system.
+
+1. Users Table
+
+Purpose:
+
+The users table stores information about users of the B&G Bus Tracking application. Users can be either students or administrators, and the table tracks their login credentials and account status.
+
+Fields:
+
+	•	id: A unique identifier for each user.
+	•	name: The name of the user.
+	•	email: User’s email address, which is used for login.
+	•	password: The hashed password for user authentication.
+	•	role: Defines the role of the user (e.g., student, admin).
+	•	status: The current status of the user, which can be:
+	 •	active: The user is permitted to log in and access the system.
+	 •	inactive: The user account is deactivated but can be reactivated.
+	 •	suspended: The user is temporarily suspended due to policy violations.
+
+Purpose of Status:
+
+The status field allows administrators to manage user access dynamically, ensuring that only authorized users can access the application.
+
+2. Buses Table
+
+Purpose:
+
+The buses table holds information about each bus in the fleet used in the B&G Bus Tracking system. It includes the bus’s unique identifier, its route, and status.
+
+Fields:
+
+	•	id: Unique identifier for each bus.
+	•	license_plate: The bus’s license plate number.
+	•	capacity: The maximum number of passengers the bus can carry.
+	•	status: The current status of the bus, which can be:
+	 •	active: The bus is operational and currently in service.
+	 •	in maintenance: The bus is temporarily out of service for repairs.
+	 •	inactive: The bus is not currently operational.
+	 •	out_of_service: The bus is permanently decommissioned.
+
+Purpose of Status:
+
+The status field allows for operational management of buses, indicating whether a bus is ready for service or under maintenance.
+
+3. Routes Table
+
+Purpose:
+
+The routes table contains details about each bus route available in the system. Each route consists of multiple bus stops, with defined start and end points.
+
+Fields:
+
+	•	id: Unique identifier for each route.
+	•	route_name: A name or code for the bus route.
+	•	start_point: The starting bus stop of the route.
+	•	end_point: The ending bus stop of the route.
+	•	status: The operational status of the route, which can be:
+	 •	active: The route is operational and active.
+	 •	inactive: The route is temporarily out of service.
+	 •	under construction: The route is being modified or constructed.
+
+Purpose of Status:
+
+The status field helps manage the availability of routes, especially during maintenance or updates.
+
+4. Bus Stops Table
+
+Purpose:
+
+The bus_stops table stores information about the individual bus stops along each route. Each bus stop has a unique identifier and is associated with GPS coordinates for real-time tracking.
+
+Fields:
+
+	•	id: Unique identifier for each bus stop.
+	•	stop_name: The name or description of the bus stop.
+	•	route_id: Foreign key to the routes table, indicating which route the bus stop belongs to.
+	•	latitude: Latitude coordinate for real-time bus location tracking.
+	•	longitude: Longitude coordinate for real-time bus location tracking.
+	•	status: The status of the bus stop, which can be:
+	 •	active: The bus stop is operational.
+	 •	inactive: The bus stop is temporarily unavailable.
+	 •	under construction: The bus stop is undergoing construction or renovation.
+
+Purpose of Status:
+
+The status field allows administrators to manage and update bus stop availability and access for passengers.
+
+5. Bus Locations Table
+
+Purpose:
+
+The bus_locations table records the real-time locations of buses as they move along their routes. This table stores latitude, longitude, timestamp, and the state of the location data (real-time or historical).
+
+Fields:
+
+	•	id: Unique identifier for each bus location update.
+	•	bus_id: Foreign key to the buses table, indicating which bus the location belongs to.
+	•	latitude: Latitude coordinate of the bus’s current location.
+	•	longitude: Longitude coordinate of the bus’s current location.
+	•	timestamp: The time at which the location update was recorded.
+	•	state: The state of the location data, which can be:
+	•	real_time: The bus’s current location in real-time.
+	•	historical: A past location update, used for tracking historical movements.
+
+Purpose of State:
+
+The state field differentiates between current and past location data, which is important for both real-time tracking and historical analysis.
+
+6. Attendance Table (Optional)
+
+Purpose:
+
+The attendance table tracks which students have boarded or exited a bus. This helps provide occupancy data for each bus.
+
+Fields:
+
+	•	id: Unique identifier for each attendance record.
+	•	user_id: Foreign key to the users table, indicating which user is boarding the bus.
+	•	bus_id: Foreign key to the buses table, indicating which bus the user is boarding.
+	•	status: The current status of the user’s attendance, which can be:
+	 •	boarding: The user is in the process of boarding the bus.
+	 •	on_board: The user is currently on the bus.
+	 •	off_board: The user has exited the bus.
+	 •	canceled: The user has canceled their attendance.
+
+Purpose of Status:
+
+The status field provides real-time data on user occupancy and helps manage bus occupancy levels.
+
+General Design Considerations
+
+	•	Normalization: The schema is designed with normalization principles to reduce redundancy and ensure data integrity. Tables are linked with foreign keys, such as user_id, bus_id, and route_id, to establish relationships and ensure consistency.
+	•	Indexing: Key columns like bus_id, user_id, and route_id should be indexed for faster query performance, especially in high-volume tracking and user attendance scenarios.
+	•	Scalability: The schema is designed to be scalable, supporting a growing number of buses, routes, and users. Future expansions can include more attributes in each table (e.g., adding new statuses or more detailed GPS data) without major changes to the schema.
+
+This documentation aims to give developers a clear understanding of the schema’s structure and the relationships between different entities. By following these guidelines, the system can be easily managed and extended in the future.

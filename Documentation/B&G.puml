@@ -1,0 +1,25 @@
+@startuml
+actor User
+participant "Frontend (Web/Mobile)" as Frontend
+participant "Backend (API)" as Backend
+participant "Database" as DB
+participant "GPS Tracker" as GPSTracker
+participant "Google Maps API" as GoogleMaps
+
+User -> Frontend : Open Map
+Frontend -> Backend : Request real-time bus locations
+Backend -> DB : Query for current bus locations
+DB -> Backend : Return bus locations
+Backend -> Frontend : Send bus locations data
+Frontend -> GoogleMaps : Display bus locations on map
+
+== Real-Time Updates ==
+Frontend -> GPSTracker : Get GPS data from buses
+GPSTracker -> Backend : Send GPS data (bus_id, lat, lon)
+Backend -> DB : Update bus location in database
+Backend -> Frontend : Push real-time location update
+Frontend -> GoogleMaps : Update bus marker on map
+
+Frontend -> GoogleMaps : Center map on selected bus
+Frontend -> User : Display map with bus info
+@enduml
