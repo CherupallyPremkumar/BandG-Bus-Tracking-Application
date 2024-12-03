@@ -1,0 +1,161 @@
+Below is a Design Document structured according to the Software Development Life Cycle (SDLC) methodology. This document will guide developers from the requirements phase through to deployment.
+
+Design Document: B&G Bus Tracking Application
+
+1. Introduction
+
+Project Title: B&G Bus Tracker
+Objective: Develop a real-time application to track B&G buses, show their current locations, and display the number of passengers onboard.
+Target Audience: Students and administrators.
+Primary Features:
+	•	Real-time bus location tracking.
+	•	Passenger occupancy details.
+	•	User-friendly web and mobile interface.
+
+2. Requirements Analysis
+
+Functional Requirements
+
+	1.	Display real-time location of all active buses on a map.
+	2.	Show passenger count for each bus.
+	3.	Authenticate users (students and admins).
+	4.	Provide route and stop details for each bus.
+	5.	Notifications for bus arrival or schedule changes.
+
+Non-Functional Requirements
+
+	1.	Scalability to accommodate future buses or students.
+	2.	Real-time updates within 2-5 seconds latency.
+	3.	Secure user data and API endpoints.
+	4.	Mobile-friendly design.
+
+Hardware Requirements
+
+	1.	GPS trackers for buses.
+	2.	IoT-enabled devices for passenger counting (optional: infrared sensors or manual updates).
+	3.	Cloud server for hosting backend APIs.
+
+3. System Design
+
+3.1 Architecture Overview
+
+The application will use a three-tier architecture:
+	1.	Frontend: Angular (Web), React Native (Mobile).
+	2.	Backend: Spring Boot (Java) for API development.
+	3.	Database: PostgreSQL for structured data.
+
+3.2 Data Flow Diagram
+
+Level 0: High-Level View
+	•	Users interact with the frontend.
+	•	Backend processes API requests.
+	•	Data fetched from the database and IoT devices.
+
+Level 1: Detailed View
+	1.	Users log in and fetch token for authentication.
+	2.	GPS data is periodically sent to the backend.
+	3.	Backend updates location and passenger data in the database.
+	4.	Frontend fetches this data and displays it in real-time.
+
+4. Database Design
+
+Tables
+
+	1.	Users: Manage user authentication and roles.
+	2.	Buses: Details like license plate, capacity, current passengers.
+	3.	Routes: Define routes, start and end points.
+	4.	Bus_Stops: Stops along each route with GPS coordinates.
+	5.	Bus_Locations: Periodic GPS location updates.
+	6.	Attendance (Optional): Tracks users boarding buses.
+
+Relationships
+
+	•	A bus belongs to a route and updates its location.
+	•	A user may check into multiple buses (via Attendance).
+
+5. Frontend Design
+
+Pages
+
+	1.	Login/Signup Page: For authentication.
+	2.	Dashboard: Real-time map with buses and their statuses.
+	3.	Route Details: Information on stops and routes.
+	4.	Admin Panel: Manage buses, routes, and schedules.
+
+Wireframe (Brief)
+
+	1.	Map View: Map with icons for each bus, showing location and passenger count.
+	2.	Sidebar: Navigation for routes, stops, and admin settings.
+
+6. Backend Design
+
+API Endpoints
+
+	1.	Authentication:
+	•	POST /auth/login
+	•	POST /auth/register
+	2.	Bus Management:
+	•	GET /buses
+	•	GET /buses/:id/locations
+	3.	Route Management:
+	•	GET /routes
+	•	GET /routes/:id/stops
+	4.	Real-time Updates:
+	•	WebSocket /updates
+
+Technologies
+
+	•	Framework: Spring Boot.
+	•	Security: Spring Security with JWT for authentication.
+	•	Real-Time Updates: WebSocket for push notifications.
+
+7. Implementation Plan
+
+Phase 1: Requirement Gathering
+
+	•	Identify all stakeholders.
+	•	Finalize feature requirements.
+
+Phase 2: Design
+
+	•	Create wireframes for UI.
+	•	Design ER diagrams for database.
+
+Phase 3: Development
+
+	•	Frontend: Build Angular components for dashboard and authentication.
+	•	Backend: Develop APIs and integrate with WebSocket.
+	•	IoT Integration: Configure GPS trackers for buses.
+
+Phase 4: Testing
+
+	•	Unit tests for backend APIs.
+	•	UI/UX testing on different devices.
+	•	Performance testing for real-time updates.
+
+Phase 5: Deployment
+
+	•	Deploy the backend on AWS/GCP.
+	•	Publish the mobile app on Play Store and App Store.
+
+8. Security Considerations
+
+	1.	Use HTTPS for secure communication.
+	2.	Validate all input data on the backend.
+	3.	Protect API endpoints with JWT tokens.
+	4.	Limit database access with roles.
+
+9. Risks and Mitigations
+
+Risk	Mitigation
+GPS device failure	Provide manual update options.
+Data overload	Optimize database queries and indexing.
+Latency in updates	Use WebSocket or Firebase for speed.
+
+10. Future Enhancements
+
+	1.	Add predictive arrival times using AI models.
+	2.	Implement dynamic rerouting for buses.
+	3.	Support for offline access.
+
+Let me know if you need detailed wireframes or diagrams!
