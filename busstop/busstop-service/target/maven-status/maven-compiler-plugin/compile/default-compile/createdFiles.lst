@@ -1,0 +1,9 @@
+com/bgbus/tracker/busstop/service/healthcheck/BusstopHealthChecker.class
+com/bgbus/tracker/busstop/service/store/BusstopEntityStore.class
+com/bgbus/tracker/busstop/configuration/BusstopConfiguration.class
+com/bgbus/tracker/busstop/service/errorcodes/ErrorCodes.class
+com/bgbus/tracker/busstop/service/cmds/ResolveBusstopAction.class
+com/bgbus/tracker/busstop/configuration/controller/BusstopController.class
+com/bgbus/tracker/busstop/service/cmds/AssignBusstopAction.class
+com/bgbus/tracker/busstop/configuration/dao/BusstopRepository.class
+com/bgbus/tracker/busstop/service/cmds/CloseBusstopAction.class

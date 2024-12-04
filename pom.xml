@@ -8,7 +8,12 @@
         <artifactId>chenile-parent</artifactId>
     </parent>
     <modules>
-          <module>userservice</module>
+<module>route</module>
+<module>bus</module>
+<module>busstop</module>
+<module>student</module>
+<module>tracker</module>
+<module>query</module>
     </modules>
 
     <groupId>com.bgbus.tracker</groupId>

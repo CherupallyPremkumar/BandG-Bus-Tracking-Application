@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ErrorCodes.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Route Service Implementations</a> &gt; <a href="index.source.html" class="el_package">com.bgbus.tracker.route.service.errorcodes</a> &gt; <span class="el_source">ErrorCodes.java</span></div><h1>ErrorCodes.java</h1><pre class="source lang-java linenums">package com.bgbus.tracker.route.service.errorcodes;
+
+<span class="nc" id="L3">public enum ErrorCodes {</span>
+    // replace the 50000 below with your own sub error range.
+	// Each service must have its own sub error range so that it is easy
+	// to know the service from the sub error range
+	// Make sure that the sub error number matches the one in the resources
+<span class="nc" id="L8">	SOME_ERROR(50000);</span>
+
+	private final int subError;
+<span class="nc" id="L11">	private ErrorCodes(int subError) {</span>
+<span class="nc" id="L12">		this.subError = subError;</span>
+<span class="nc" id="L13">	}</span>
+	
+	public int getSubError() {
+<span class="nc" id="L16">		return this.subError;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

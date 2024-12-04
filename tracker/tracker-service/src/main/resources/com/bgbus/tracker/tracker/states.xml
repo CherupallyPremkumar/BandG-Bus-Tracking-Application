@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<states>
+	<event-information eventId='assign'
+                       meta-bodyType='com.bgbus.tracker.tracker.model.AssignTrackerPayload'
+                       meta-acls="test.premium"
+    />
+	<event-information eventId='resolve'
+                       meta-bodyType='org.chenile.workflow.param.MinimalPayload'
+                       meta-acls="test.premium"
+    />
+	<event-information eventId='close'
+                       meta-bodyType='org.chenile.workflow.param.MinimalPayload'
+                       meta-acls="test.premium"
+    />
+	<default-transition-action componentName="trackerBaseTransitionAction"/>
+	
+	<flow id='test-flow' default='true'>
+		<entry-action componentName="trackerEntryAction"/>
+		<exit-action componentName="trackerExitAction"/>
+        <security-strategy componentName="stmSecurityStrategy"/>
+		<manual-state id='OPENED' initialState='true'>
+			<on eventId='assign'  newStateId='ASSIGNED' componentName='assignTracker'/>
+		</manual-state>
+
+		<manual-state id='ASSIGNED'>
+			<on eventId='resolve' newStateId='RESOLVED' componentName='resolveTracker'/>
+		</manual-state>
+		<manual-state id='RESOLVED'>
+			<on eventId='close' newStateId='CLOSED' componentName='closeTracker'/>
+		</manual-state>
+		<manual-state id='CLOSED' />
+	</flow>
+	
+</states>

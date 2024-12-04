@@ -1,0 +1,21 @@
+package com.bgbus.tracker.busstop.service.cmds;
+
+import org.chenile.stm.STMInternalTransitionInvoker;
+import org.chenile.stm.State;
+import org.chenile.stm.action.STMTransitionAction;
+import org.chenile.stm.model.Transition;
+
+import com.bgbus.tracker.busstop.model.AssignBusstopPayload;
+import com.bgbus.tracker.busstop.model.Busstop;
+
+public class AssignBusstopAction implements STMTransitionAction<Busstop>{
+
+	@Override
+	public void doTransition(Busstop busstop, Object transitionParam, State startState, String eventId,
+			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
+		AssignBusstopPayload payload = (AssignBusstopPayload) transitionParam;
+		busstop.assignee = payload.assignee;
+		busstop.assignComment = payload.getComment();
+	}
+
+}

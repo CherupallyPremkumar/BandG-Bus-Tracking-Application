@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BusstopConfiguration.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Busstop Service Implementations</a> &gt; <a href="index.source.html" class="el_package">com.bgbus.tracker.busstop.configuration</a> &gt; <span class="el_source">BusstopConfiguration.java</span></div><h1>BusstopConfiguration.java</h1><pre class="source lang-java linenums">package com.bgbus.tracker.busstop.configuration;
+
+import org.chenile.stm.STM;
+import org.chenile.stm.action.STMTransitionAction;
+import org.chenile.stm.impl.BeanFactoryAdapter;
+import org.chenile.stm.impl.STMActionsInfoProvider;
+import org.chenile.stm.impl.STMFlowStoreImpl;
+import org.chenile.stm.impl.STMImpl;
+import org.chenile.stm.impl.XmlFlowReader;
+import org.chenile.stm.spring.SpringBeanFactoryAdapter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import org.chenile.utils.entity.service.EntityStore;
+import org.chenile.workflow.service.impl.StateEntityServiceImpl;
+import org.chenile.workflow.service.stmcmds.BaseTransitionAction;
+import org.chenile.workflow.service.stmcmds.GenericEntryAction;
+import org.chenile.workflow.service.stmcmds.GenericExitAction;
+import org.chenile.workflow.service.stmcmds.StmBodyTypeSelector;
+import com.bgbus.tracker.busstop.model.Busstop;
+import com.bgbus.tracker.busstop.service.cmds.AssignBusstopAction;
+import com.bgbus.tracker.busstop.service.cmds.CloseBusstopAction;
+import com.bgbus.tracker.busstop.service.cmds.ResolveBusstopAction;
+import com.bgbus.tracker.busstop.service.healthcheck.BusstopHealthChecker;
+import com.bgbus.tracker.busstop.service.store.BusstopEntityStore;
+import org.chenile.workflow.api.WorkflowRegistry;
+import org.chenile.workflow.service.stmcmds.StmAuthoritiesBuilder;
+import java.util.function.Function;
+import org.chenile.core.context.ChenileExchange;
+
+/**
+ This is where you will instantiate all the required classes in Spring
+
+*/
+@Configuration
+<span class="fc" id="L39">public class BusstopConfiguration {</span>
+	private static final String FLOW_DEFINITION_FILE = &quot;com/bgbus/tracker/busstop/states.xml&quot;;
+	
+	@Bean BeanFactoryAdapter busstopBeanFactoryAdapter() {
+<span class="fc" id="L43">		return new SpringBeanFactoryAdapter();</span>
+	}
+	
+	@Bean STMFlowStoreImpl busstopFlowStore(@Qualifier(&quot;busstopBeanFactoryAdapter&quot;) BeanFactoryAdapter busstopBeanFactoryAdapter) throws Exception{
+<span class="fc" id="L47">		STMFlowStoreImpl stmFlowStore = new STMFlowStoreImpl();</span>
+<span class="fc" id="L48">		stmFlowStore.setBeanFactory(busstopBeanFactoryAdapter);</span>
+<span class="fc" id="L49">		return stmFlowStore;</span>
+	}
+	
+	@Bean @Autowired STM&lt;Busstop&gt; busstopEntityStm(@Qualifier(&quot;busstopFlowStore&quot;) STMFlowStoreImpl stmFlowStore) throws Exception{
+<span class="fc" id="L53">		STMImpl&lt;Busstop&gt; stm = new STMImpl&lt;&gt;();		</span>
+<span class="fc" id="L54">		stm.setStmFlowStore(stmFlowStore);</span>
+<span class="fc" id="L55">		return stm;</span>
+	}
+	
+	@Bean @Autowired STMActionsInfoProvider busstopActionsInfoProvider(@Qualifier(&quot;busstopFlowStore&quot;) STMFlowStoreImpl stmFlowStore) {
+<span class="fc" id="L59">		STMActionsInfoProvider provider =  new STMActionsInfoProvider(stmFlowStore);</span>
+<span class="fc" id="L60">        WorkflowRegistry.addSTMActionsInfoProvider(&quot;busstop&quot;,provider);</span>
+<span class="fc" id="L61">        return provider;</span>
+	}
+	
+	@Bean EntityStore&lt;Busstop&gt; busstopEntityStore() {
+<span class="fc" id="L65">		return new BusstopEntityStore();</span>
+	}
+	
+	@Bean @Autowired StateEntityServiceImpl&lt;Busstop&gt; _busstopStateEntityService_(
+			@Qualifier(&quot;busstopEntityStm&quot;) STM&lt;Busstop&gt; stm,
+			@Qualifier(&quot;busstopActionsInfoProvider&quot;) STMActionsInfoProvider busstopInfoProvider,
+			@Qualifier(&quot;busstopEntityStore&quot;) EntityStore&lt;Busstop&gt; entityStore){
+<span class="fc" id="L72">		return new StateEntityServiceImpl&lt;&gt;(stm, busstopInfoProvider, entityStore);</span>
+	}
+	
+	// Now we start constructing the STM Components 
+	
+	@Bean @Autowired GenericEntryAction&lt;Busstop&gt; busstopEntryAction(@Qualifier(&quot;busstopEntityStore&quot;) EntityStore&lt;Busstop&gt; entityStore,
+			@Qualifier(&quot;busstopActionsInfoProvider&quot;) STMActionsInfoProvider busstopInfoProvider){
+<span class="fc" id="L79">		return new GenericEntryAction&lt;Busstop&gt;(entityStore,busstopInfoProvider);</span>
+	}
+	
+	@Bean GenericExitAction&lt;Busstop&gt; busstopExitAction(){
+<span class="fc" id="L83">		return new GenericExitAction&lt;Busstop&gt;();</span>
+	}
+	
+	@Bean @Autowired StmBodyTypeSelector busstopBodyTypeSelector(@Qualifier(&quot;busstopActionsInfoProvider&quot;) STMActionsInfoProvider busstopInfoProvider) {
+<span class="fc" id="L87">		return new StmBodyTypeSelector(busstopInfoProvider);</span>
+	}
+	
+	@Bean @Autowired STMTransitionAction&lt;Busstop&gt; busstopBaseTransitionAction(){
+<span class="fc" id="L91">		return new BaseTransitionAction&lt;&gt;();</span>
+	}
+	
+	@Bean AssignBusstopAction assignBusstop() {
+<span class="fc" id="L95">		return new AssignBusstopAction();</span>
+	}
+	
+	@Bean ResolveBusstopAction resolveBusstop() {
+<span class="fc" id="L99">		return new ResolveBusstopAction();</span>
+	}
+	
+	@Bean CloseBusstopAction closeBusstop() {
+<span class="fc" id="L103">		return new CloseBusstopAction();</span>
+	}
+
+	@Bean
+	XmlFlowReader busstopFlowReader(@Qualifier(&quot;busstopFlowStore&quot;) STMFlowStoreImpl flowStore) throws Exception {
+<span class="fc" id="L108">		XmlFlowReader flowReader = new XmlFlowReader(flowStore);</span>
+<span class="fc" id="L109">		flowReader.setFilename(FLOW_DEFINITION_FILE);</span>
+<span class="fc" id="L110">		return flowReader;</span>
+	}
+	
+
+	@Bean BusstopHealthChecker busstopHealthChecker(){
+<span class="fc" id="L115">    	return new BusstopHealthChecker();</span>
+    }
+
+    @Bean @Autowired Function&lt;ChenileExchange, String[]&gt; busstopEventAuthoritiesSupplier(
+        @Qualifier(&quot;busstopActionsInfoProvider&quot;) STMActionsInfoProvider busstopInfoProvider)
+                    throws Exception{
+<span class="fc" id="L121">        StmAuthoritiesBuilder builder = new StmAuthoritiesBuilder(busstopInfoProvider);</span>
+<span class="fc" id="L122">        return builder.build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -18,7 +18,12 @@
     </license>
   </licenses>
   <modules>
-    <module>userservice</module>
+    <module>route</module>
+    <module>bus</module>
+    <module>busstop</module>
+    <module>student</module>
+    <module>tracker</module>
+    <module>query</module>
   </modules>
   <properties>
     <liquibase-plugin.url></liquibase-plugin.url>
