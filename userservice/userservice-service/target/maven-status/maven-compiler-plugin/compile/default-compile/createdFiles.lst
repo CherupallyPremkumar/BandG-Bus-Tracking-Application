@@ -1,0 +1,9 @@
+com/bgbus/tracker/userservice/service/errorcodes/ErrorCodes.class
+com/bgbus/tracker/userservice/configuration/UserserviceConfiguration.class
+com/bgbus/tracker/userservice/configuration/controller/UserserviceController.class
+com/bgbus/tracker/userservice/service/cmds/AssignUserserviceAction.class
+com/bgbus/tracker/userservice/configuration/dao/UserserviceRepository.class
+com/bgbus/tracker/userservice/service/cmds/CloseUserserviceAction.class
+com/bgbus/tracker/userservice/service/cmds/ResolveUserserviceAction.class
+com/bgbus/tracker/userservice/service/store/UserserviceEntityStore.class
+com/bgbus/tracker/userservice/service/healthcheck/UserserviceHealthChecker.class

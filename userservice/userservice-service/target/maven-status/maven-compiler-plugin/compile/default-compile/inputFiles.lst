@@ -1,0 +1,9 @@
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/configuration/UserserviceConfiguration.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/configuration/dao/UserserviceRepository.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/configuration/controller/UserserviceController.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/service/cmds/AssignUserserviceAction.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/service/store/UserserviceEntityStore.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/service/errorcodes/ErrorCodes.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/service/cmds/ResolveUserserviceAction.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/service/healthcheck/UserserviceHealthChecker.java
+/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/src/main/java/com/bgbus/tracker/userservice/service/cmds/CloseUserserviceAction.java

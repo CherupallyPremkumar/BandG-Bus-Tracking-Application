@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.bgbus.tracker.userservice.bdd.CukesRestTest" time="3.915" tests="6" errors="2" skipped="0" failures="4">
+  <properties>
+    <property name="java.specification.version" value="22"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/target/test-classes:/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/target/classes:/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-api/target/userservice-api-0.0.1-SNAPSHOT.jar:/Users/premkumar/.m2/repository/org/chenile/workflow-api/1.3.6/workflow-api-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/jpa-utils/1.3.6/jpa-utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.4/spring-boot-starter-data-jpa-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.4/spring-boot-starter-aop-3.2.4.jar:/Users/premkumar/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.4/spring-boot-starter-jdbc-3.2.4.jar:/Users/premkumar/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/premkumar/.m2/repository/org/springframework/spring-jdbc/6.1.5/spring-jdbc-6.1.5.jar:/Users/premkumar/.m2/repository/org/hibernate/orm/hibernate-core/6.4.4.Final/hibernate-core-6.4.4.Final.jar:/Users/premkumar/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/premkumar/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/premkumar/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/premkumar/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/premkumar/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/premkumar/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/Users/premkumar/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/premkumar/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/premkumar/.m2/repository/org/springframework/data/spring-data-jpa/3.2.4/spring-data-jpa-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/data/spring-data-commons/3.2.4/spring-data-commons-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/spring-orm/6.1.5/spring-orm-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-tx/6.1.5/spring-tx-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-aspects/6.1.5/spring-aspects-6.1.5.jar:/Users/premkumar/.m2/repository/org/chenile/workflow-service/1.3.6/workflow-service-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/stm/1.3.6/stm-1.3.6.jar:/Users/premkumar/.m2/repository/ognl/ognl/3.2/ognl-3.2.jar:/Users/premkumar/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar:/Users/premkumar/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/Users/premkumar/.m2/repository/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar:/Users/premkumar/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/premkumar/.m2/repository/org/chenile/utils/1.3.6/utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/junit/vintage/junit-vintage-engine/5.10.2/junit-vintage-engine-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/premkumar/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/premkumar/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/premkumar/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/premkumar/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/Users/premkumar/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-security-api/1.3.6/chenile-security-api-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-core/1.3.6/chenile-core-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-base/1.3.6/chenile-base-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/3.2.4/spring-boot-configuration-processor-3.2.4.jar:/Users/premkumar/.m2/repository/org/chenile/owiz/1.3.6/owiz-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-core/6.2.3/spring-security-core-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-crypto/6.2.3/spring-security-crypto-6.2.3.jar:/Users/premkumar/.m2/repository/org/chenile/cucumber-sec-utils/1.3.6/cucumber-sec-utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-security/1.3.6/chenile-security-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.4/spring-boot-starter-security-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-config/6.2.3/spring-security-config-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-web/6.2.3/spring-security-web-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-oauth2-resource-server/3.2.4/spring-boot-starter-oauth2-resource-server-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-resource-server/6.2.3/spring-security-oauth2-resource-server-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-core/6.2.3/spring-security-oauth2-core-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-jose/6.2.3/spring-security-oauth2-jose-6.2.3.jar:/Users/premkumar/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.24.4/nimbus-jose-jwt-9.24.4.jar:/Users/premkumar/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-oauth2-client/3.2.4/spring-boot-starter-oauth2-client-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-client/6.2.3/spring-security-oauth2-client-6.2.3.jar:/Users/premkumar/.m2/repository/com/nimbusds/oauth2-oidc-sdk/9.43.3/oauth2-oidc-sdk-9.43.3.jar:/Users/premkumar/.m2/repository/com/nimbusds/content-type/2.2/content-type-2.2.jar:/Users/premkumar/.m2/repository/com/nimbusds/lang-tag/1.7/lang-tag-1.7.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-boot-starter/24.0.5/keycloak-spring-boot-starter-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-boot-2-adapter/24.0.5/keycloak-spring-boot-2-adapter-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-boot-adapter-core/24.0.5/keycloak-spring-boot-adapter-core-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-authz-client/24.0.5/keycloak-authz-client-24.0.5.jar:/Users/premkumar/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/Users/premkumar/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/premkumar/.m2/repository/org/keycloak/spring-boot-container-bundle/24.0.5/spring-boot-container-bundle-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-adapter-core/24.0.5/keycloak-adapter-core-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-crypto-default/24.0.5/keycloak-crypto-default-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-server-spi/24.0.5/keycloak-server-spi-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-server-spi-private/24.0.5/keycloak-server-spi-private-24.0.5.jar:/Users/premkumar/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.77/bcpkix-jdk18on-1.77.jar:/Users/premkumar/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.77/bcutil-jdk18on-1.77.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-security-adapter/24.0.5/keycloak-spring-security-adapter-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-adapter-spi/24.0.5/keycloak-adapter-spi-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-policy-enforcer/24.0.5/keycloak-policy-enforcer-24.0.5.jar:/Users/premkumar/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.77/bcprov-jdk18on-1.77.jar:/Users/premkumar/.m2/repository/com/github/dasniko/testcontainers-keycloak/3.4.0/testcontainers-keycloak-3.4.0.jar:/Users/premkumar/.m2/repository/org/testcontainers/testcontainers/1.19.7/testcontainers-1.19.7.jar:/Users/premkumar/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/premkumar/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/premkumar/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/premkumar/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/premkumar/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar:/Users/premkumar/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/premkumar/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/premkumar/.m2/repository/io/quarkus/quarkus-junit4-mock/3.8.5/quarkus-junit4-mock-3.8.5.jar:/Users/premkumar/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.jar:/Users/premkumar/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.jar:/Users/premkumar/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.jar:/Users/premkumar/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-admin-client/25.0.0/keycloak-admin-client-25.0.0.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-core/25.0.0/keycloak-core-25.0.0.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-common/25.0.0/keycloak-common-25.0.0.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-client/6.2.7.Final/resteasy-client-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-client-api/6.2.7.Final/resteasy-client-api-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-core-spi/6.2.7.Final/resteasy-core-spi-6.2.7.Final.jar:/Users/premkumar/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-core/6.2.7.Final/resteasy-core-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/jboss/jandex/2.4.4.Final/jandex-2.4.4.Final.jar:/Users/premkumar/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/Users/premkumar/.m2/repository/com/ibm/async/asyncutil/0.1.0/asyncutil-0.1.0.jar:/Users/premkumar/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/Users/premkumar/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar:/Users/premkumar/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-multipart-provider/6.2.7.Final/resteasy-multipart-provider-6.2.7.Final.jar:/Users/premkumar/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar:/Users/premkumar/.m2/repository/org/eclipse/angus/angus-mail/2.0.3/angus-mail-2.0.3.jar:/Users/premkumar/.m2/repository/org/apache/james/apache-mime4j-dom/0.8.9/apache-mime4j-dom-0.8.9.jar:/Users/premkumar/.m2/repository/org/apache/james/apache-mime4j-core/0.8.9/apache-mime4j-core-0.8.9.jar:/Users/premkumar/.m2/repository/org/apache/james/apache-mime4j-storage/0.8.9/apache-mime4j-storage-0.8.9.jar:/Users/premkumar/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-jackson2-provider/6.2.7.Final/resteasy-jackson2-provider-6.2.7.Final.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/jakarta/rs/jackson-jakarta-rs-base/2.15.4/jackson-jakarta-rs-base-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/jakarta/rs/jackson-jakarta-rs-json-provider/2.15.4/jackson-jakarta-rs-json-provider-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.15.4/jackson-module-jakarta-xmlbind-annotations-2.15.4.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/json-patch/1.13/json-patch-1.13.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-jaxb-provider/6.2.7.Final/resteasy-jaxb-provider-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/codemodel/4.0.5/codemodel-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-jxc/4.0.5/jaxb-jxc-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-xjc/4.0.5/jaxb-xjc-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/xsom/4.0.5/xsom-4.0.5.jar:/Users/premkumar/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/premkumar/.m2/repository/com/sun/istack/istack-commons-tools/4.1.2/istack-commons-tools-4.1.2.jar:/Users/premkumar/.m2/repository/com/sun/xml/bind/external/relaxng-datatype/4.0.3/relaxng-datatype-4.0.3.jar:/Users/premkumar/.m2/repository/com/sun/xml/bind/external/rngom/4.0.3/rngom-4.0.3.jar:/Users/premkumar/.m2/repository/org/chenile/security-interceptor/1.3.6/security-interceptor-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.4/spring-boot-starter-web-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.4/spring-boot-starter-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot/3.2.4/spring-boot-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.4/spring-boot-autoconfigure-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.4/spring-boot-starter-logging-3.2.4.jar:/Users/premkumar/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/premkumar/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/premkumar/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/premkumar/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/premkumar/.m2/repository/org/slf4j/jul-to-slf4j/2.0.12/jul-to-slf4j-2.0.12.jar:/Users/premkumar/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/premkumar/.m2/repository/org/springframework/spring-core/6.1.5/spring-core-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-jcl/6.1.5/spring-jcl-6.1.5.jar:/Users/premkumar/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.4/spring-boot-starter-json-3.2.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.4/jackson-datatype-jdk8-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.4/jackson-datatype-jsr310-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.4/jackson-module-parameter-names-2.15.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.4/spring-boot-starter-tomcat-3.2.4.jar:/Users/premkumar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.19/tomcat-embed-core-10.1.19.jar:/Users/premkumar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.19/tomcat-embed-el-10.1.19.jar:/Users/premkumar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.19/tomcat-embed-websocket-10.1.19.jar:/Users/premkumar/.m2/repository/org/springframework/spring-web/6.1.5/spring-web-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-beans/6.1.5/spring-beans-6.1.5.jar:/Users/premkumar/.m2/repository/io/micrometer/micrometer-observation/1.12.4/micrometer-observation-1.12.4.jar:/Users/premkumar/.m2/repository/io/micrometer/micrometer-commons/1.12.4/micrometer-commons-1.12.4.jar:/Users/premkumar/.m2/repository/org/springframework/spring-webmvc/6.1.5/spring-webmvc-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-aop/6.1.5/spring-aop-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-context/6.1.5/spring-context-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-expression/6.1.5/spring-expression-6.1.5.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-http/1.3.6/chenile-http-1.3.6.jar:/Users/premkumar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.4.0/springdoc-openapi-starter-webmvc-ui-2.4.0.jar:/Users/premkumar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.4.0/springdoc-openapi-starter-webmvc-api-2.4.0.jar:/Users/premkumar/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.4.0/springdoc-openapi-starter-common-2.4.0.jar:/Users/premkumar/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.20/swagger-core-jakarta-2.2.20.jar:/Users/premkumar/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.20/swagger-annotations-jakarta-2.2.20.jar:/Users/premkumar/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.20/swagger-models-jakarta-2.2.20.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.4/jackson-dataformat-yaml-2.15.4.jar:/Users/premkumar/.m2/repository/org/webjars/swagger-ui/5.11.8/swagger-ui-5.11.8.jar:/Users/premkumar/.m2/repository/org/chenile/cucumber-utils/1.3.6/cucumber-utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/Users/premkumar/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.4/spring-boot-starter-test-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-test/3.2.4/spring-boot-test-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.4/spring-boot-test-autoconfigure-3.2.4.jar:/Users/premkumar/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/premkumar/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/premkumar/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/premkumar/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/premkumar/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/premkumar/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/premkumar/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/premkumar/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/Users/premkumar/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/premkumar/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/premkumar/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/premkumar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/Users/premkumar/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/premkumar/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/premkumar/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/premkumar/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/premkumar/.m2/repository/org/springframework/spring-test/6.1.5/spring-test-6.1.5.jar:/Users/premkumar/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-java/4.3.1/cucumber-java-4.3.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-core/4.3.1/cucumber-core-4.3.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar:/Users/premkumar/.m2/repository/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar:/Users/premkumar/.m2/repository/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-expressions/6.2.2/cucumber-expressions-6.2.2.jar:/Users/premkumar/.m2/repository/io/cucumber/datatable/1.1.12/datatable-1.1.12.jar:/Users/premkumar/.m2/repository/io/cucumber/datatable-dependencies/1.1.12/datatable-dependencies-1.1.12.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-spring/4.3.1/cucumber-spring-4.3.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-junit/4.3.1/cucumber-junit-4.3.1.jar:/Users/premkumar/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Chicago"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="22"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/target/surefire/surefirebooter-20241203200548538_3.jar /Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/target/surefire 2024-12-03T20-05-47_720-jvmRun1 surefire-20241203200548538_1tmp surefire_0-20241203200548538_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/target/test-classes:/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/target/classes:/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-api/target/userservice-api-0.0.1-SNAPSHOT.jar:/Users/premkumar/.m2/repository/org/chenile/workflow-api/1.3.6/workflow-api-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/jpa-utils/1.3.6/jpa-utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.4/spring-boot-starter-data-jpa-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.4/spring-boot-starter-aop-3.2.4.jar:/Users/premkumar/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.4/spring-boot-starter-jdbc-3.2.4.jar:/Users/premkumar/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/premkumar/.m2/repository/org/springframework/spring-jdbc/6.1.5/spring-jdbc-6.1.5.jar:/Users/premkumar/.m2/repository/org/hibernate/orm/hibernate-core/6.4.4.Final/hibernate-core-6.4.4.Final.jar:/Users/premkumar/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/premkumar/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/premkumar/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/premkumar/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/premkumar/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/premkumar/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/Users/premkumar/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/premkumar/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/Users/premkumar/.m2/repository/org/springframework/data/spring-data-jpa/3.2.4/spring-data-jpa-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/data/spring-data-commons/3.2.4/spring-data-commons-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/spring-orm/6.1.5/spring-orm-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-tx/6.1.5/spring-tx-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-aspects/6.1.5/spring-aspects-6.1.5.jar:/Users/premkumar/.m2/repository/org/chenile/workflow-service/1.3.6/workflow-service-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/stm/1.3.6/stm-1.3.6.jar:/Users/premkumar/.m2/repository/ognl/ognl/3.2/ognl-3.2.jar:/Users/premkumar/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar:/Users/premkumar/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/Users/premkumar/.m2/repository/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar:/Users/premkumar/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/premkumar/.m2/repository/org/chenile/utils/1.3.6/utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/junit/vintage/junit-vintage-engine/5.10.2/junit-vintage-engine-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/premkumar/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/premkumar/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/premkumar/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/premkumar/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/Users/premkumar/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-security-api/1.3.6/chenile-security-api-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-core/1.3.6/chenile-core-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-base/1.3.6/chenile-base-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/3.2.4/spring-boot-configuration-processor-3.2.4.jar:/Users/premkumar/.m2/repository/org/chenile/owiz/1.3.6/owiz-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-core/6.2.3/spring-security-core-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-crypto/6.2.3/spring-security-crypto-6.2.3.jar:/Users/premkumar/.m2/repository/org/chenile/cucumber-sec-utils/1.3.6/cucumber-sec-utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-security/1.3.6/chenile-security-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.2.4/spring-boot-starter-security-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-config/6.2.3/spring-security-config-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-web/6.2.3/spring-security-web-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-oauth2-resource-server/3.2.4/spring-boot-starter-oauth2-resource-server-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-resource-server/6.2.3/spring-security-oauth2-resource-server-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-core/6.2.3/spring-security-oauth2-core-6.2.3.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-jose/6.2.3/spring-security-oauth2-jose-6.2.3.jar:/Users/premkumar/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.24.4/nimbus-jose-jwt-9.24.4.jar:/Users/premkumar/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-oauth2-client/3.2.4/spring-boot-starter-oauth2-client-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/security/spring-security-oauth2-client/6.2.3/spring-security-oauth2-client-6.2.3.jar:/Users/premkumar/.m2/repository/com/nimbusds/oauth2-oidc-sdk/9.43.3/oauth2-oidc-sdk-9.43.3.jar:/Users/premkumar/.m2/repository/com/nimbusds/content-type/2.2/content-type-2.2.jar:/Users/premkumar/.m2/repository/com/nimbusds/lang-tag/1.7/lang-tag-1.7.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-boot-starter/24.0.5/keycloak-spring-boot-starter-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-boot-2-adapter/24.0.5/keycloak-spring-boot-2-adapter-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-boot-adapter-core/24.0.5/keycloak-spring-boot-adapter-core-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-authz-client/24.0.5/keycloak-authz-client-24.0.5.jar:/Users/premkumar/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/Users/premkumar/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/premkumar/.m2/repository/org/keycloak/spring-boot-container-bundle/24.0.5/spring-boot-container-bundle-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-adapter-core/24.0.5/keycloak-adapter-core-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-crypto-default/24.0.5/keycloak-crypto-default-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-server-spi/24.0.5/keycloak-server-spi-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-server-spi-private/24.0.5/keycloak-server-spi-private-24.0.5.jar:/Users/premkumar/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.77/bcpkix-jdk18on-1.77.jar:/Users/premkumar/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.77/bcutil-jdk18on-1.77.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-spring-security-adapter/24.0.5/keycloak-spring-security-adapter-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-adapter-spi/24.0.5/keycloak-adapter-spi-24.0.5.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-policy-enforcer/24.0.5/keycloak-policy-enforcer-24.0.5.jar:/Users/premkumar/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.77/bcprov-jdk18on-1.77.jar:/Users/premkumar/.m2/repository/com/github/dasniko/testcontainers-keycloak/3.4.0/testcontainers-keycloak-3.4.0.jar:/Users/premkumar/.m2/repository/org/testcontainers/testcontainers/1.19.7/testcontainers-1.19.7.jar:/Users/premkumar/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/premkumar/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/premkumar/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/premkumar/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/premkumar/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar:/Users/premkumar/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/premkumar/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/premkumar/.m2/repository/io/quarkus/quarkus-junit4-mock/3.8.5/quarkus-junit4-mock-3.8.5.jar:/Users/premkumar/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.jar:/Users/premkumar/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.jar:/Users/premkumar/.m2/repository/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.jar:/Users/premkumar/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-admin-client/25.0.0/keycloak-admin-client-25.0.0.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-core/25.0.0/keycloak-core-25.0.0.jar:/Users/premkumar/.m2/repository/org/keycloak/keycloak-common/25.0.0/keycloak-common-25.0.0.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-client/6.2.7.Final/resteasy-client-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-client-api/6.2.7.Final/resteasy-client-api-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-core-spi/6.2.7.Final/resteasy-core-spi-6.2.7.Final.jar:/Users/premkumar/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-core/6.2.7.Final/resteasy-core-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/jboss/jandex/2.4.4.Final/jandex-2.4.4.Final.jar:/Users/premkumar/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/Users/premkumar/.m2/repository/com/ibm/async/asyncutil/0.1.0/asyncutil-0.1.0.jar:/Users/premkumar/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/Users/premkumar/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar:/Users/premkumar/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-multipart-provider/6.2.7.Final/resteasy-multipart-provider-6.2.7.Final.jar:/Users/premkumar/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar:/Users/premkumar/.m2/repository/org/eclipse/angus/angus-mail/2.0.3/angus-mail-2.0.3.jar:/Users/premkumar/.m2/repository/org/apache/james/apache-mime4j-dom/0.8.9/apache-mime4j-dom-0.8.9.jar:/Users/premkumar/.m2/repository/org/apache/james/apache-mime4j-core/0.8.9/apache-mime4j-core-0.8.9.jar:/Users/premkumar/.m2/repository/org/apache/james/apache-mime4j-storage/0.8.9/apache-mime4j-storage-0.8.9.jar:/Users/premkumar/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-jackson2-provider/6.2.7.Final/resteasy-jackson2-provider-6.2.7.Final.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/jakarta/rs/jackson-jakarta-rs-base/2.15.4/jackson-jakarta-rs-base-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/jakarta/rs/jackson-jakarta-rs-json-provider/2.15.4/jackson-jakarta-rs-json-provider-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.15.4/jackson-module-jakarta-xmlbind-annotations-2.15.4.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/json-patch/1.13/json-patch-1.13.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/Users/premkumar/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/Users/premkumar/.m2/repository/org/jboss/resteasy/resteasy-jaxb-provider/6.2.7.Final/resteasy-jaxb-provider-6.2.7.Final.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/codemodel/4.0.5/codemodel-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-jxc/4.0.5/jaxb-jxc-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/jaxb-xjc/4.0.5/jaxb-xjc-4.0.5.jar:/Users/premkumar/.m2/repository/org/glassfish/jaxb/xsom/4.0.5/xsom-4.0.5.jar:/Users/premkumar/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/premkumar/.m2/repository/com/sun/istack/istack-commons-tools/4.1.2/istack-commons-tools-4.1.2.jar:/Users/premkumar/.m2/repository/com/sun/xml/bind/external/relaxng-datatype/4.0.3/relaxng-datatype-4.0.3.jar:/Users/premkumar/.m2/repository/com/sun/xml/bind/external/rngom/4.0.3/rngom-4.0.3.jar:/Users/premkumar/.m2/repository/org/chenile/security-interceptor/1.3.6/security-interceptor-1.3.6.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.4/spring-boot-starter-web-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.4/spring-boot-starter-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot/3.2.4/spring-boot-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.4/spring-boot-autoconfigure-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.4/spring-boot-starter-logging-3.2.4.jar:/Users/premkumar/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/premkumar/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/premkumar/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/premkumar/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/premkumar/.m2/repository/org/slf4j/jul-to-slf4j/2.0.12/jul-to-slf4j-2.0.12.jar:/Users/premkumar/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/premkumar/.m2/repository/org/springframework/spring-core/6.1.5/spring-core-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-jcl/6.1.5/spring-jcl-6.1.5.jar:/Users/premkumar/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.4/spring-boot-starter-json-3.2.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.4/jackson-datatype-jdk8-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.4/jackson-datatype-jsr310-2.15.4.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.4/jackson-module-parameter-names-2.15.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.4/spring-boot-starter-tomcat-3.2.4.jar:/Users/premkumar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.19/tomcat-embed-core-10.1.19.jar:/Users/premkumar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.19/tomcat-embed-el-10.1.19.jar:/Users/premkumar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.19/tomcat-embed-websocket-10.1.19.jar:/Users/premkumar/.m2/repository/org/springframework/spring-web/6.1.5/spring-web-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-beans/6.1.5/spring-beans-6.1.5.jar:/Users/premkumar/.m2/repository/io/micrometer/micrometer-observation/1.12.4/micrometer-observation-1.12.4.jar:/Users/premkumar/.m2/repository/io/micrometer/micrometer-commons/1.12.4/micrometer-commons-1.12.4.jar:/Users/premkumar/.m2/repository/org/springframework/spring-webmvc/6.1.5/spring-webmvc-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-aop/6.1.5/spring-aop-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-context/6.1.5/spring-context-6.1.5.jar:/Users/premkumar/.m2/repository/org/springframework/spring-expression/6.1.5/spring-expression-6.1.5.jar:/Users/premkumar/.m2/repository/org/chenile/chenile-http/1.3.6/chenile-http-1.3.6.jar:/Users/premkumar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.4.0/springdoc-openapi-starter-webmvc-ui-2.4.0.jar:/Users/premkumar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.4.0/springdoc-openapi-starter-webmvc-api-2.4.0.jar:/Users/premkumar/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.4.0/springdoc-openapi-starter-common-2.4.0.jar:/Users/premkumar/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.20/swagger-core-jakarta-2.2.20.jar:/Users/premkumar/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.20/swagger-annotations-jakarta-2.2.20.jar:/Users/premkumar/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.20/swagger-models-jakarta-2.2.20.jar:/Users/premkumar/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.4/jackson-dataformat-yaml-2.15.4.jar:/Users/premkumar/.m2/repository/org/webjars/swagger-ui/5.11.8/swagger-ui-5.11.8.jar:/Users/premkumar/.m2/repository/org/chenile/cucumber-utils/1.3.6/cucumber-utils-1.3.6.jar:/Users/premkumar/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/Users/premkumar/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.4/spring-boot-starter-test-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-test/3.2.4/spring-boot-test-3.2.4.jar:/Users/premkumar/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.4/spring-boot-test-autoconfigure-3.2.4.jar:/Users/premkumar/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/premkumar/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/premkumar/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/premkumar/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/premkumar/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/premkumar/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/premkumar/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/premkumar/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/Users/premkumar/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/premkumar/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/premkumar/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/premkumar/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/premkumar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/Users/premkumar/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/premkumar/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/premkumar/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/premkumar/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/premkumar/.m2/repository/org/springframework/spring-test/6.1.5/spring-test-6.1.5.jar:/Users/premkumar/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-java/4.3.1/cucumber-java-4.3.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-core/4.3.1/cucumber-core-4.3.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar:/Users/premkumar/.m2/repository/io/cucumber/gherkin/5.1.0/gherkin-5.1.0.jar:/Users/premkumar/.m2/repository/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-expressions/6.2.2/cucumber-expressions-6.2.2.jar:/Users/premkumar/.m2/repository/io/cucumber/datatable/1.1.12/datatable-1.1.12.jar:/Users/premkumar/.m2/repository/io/cucumber/datatable-dependencies/1.1.12/datatable-dependencies-1.1.12.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-spring/4.3.1/cucumber-spring-4.3.1.jar:/Users/premkumar/.m2/repository/io/cucumber/cucumber-junit/4.3.1/cucumber-junit-4.3.1.jar:/Users/premkumar/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/premkumar"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service/target/surefire/surefirebooter-20241203200548538_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="22.0.2+9-70"/>
+    <property name="user.name" value="premkumar"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/premkumar/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/70/72r10qsn3_126t4sqxh17grm0000gn/T/"/>
+    <property name="idea.version" value="2024.2.3"/>
+    <property name="catalina.home" value="/private/var/folders/70/72r10qsn3_126t4sqxh17grm0000gn/T/tomcat.0.6458702323272637740"/>
+    <property name="java.version" value="22.0.2"/>
+    <property name="user.dir" value="/Users/premkumar/BandG-Bus-Tracking-Application/userservice/userservice-service"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="10600"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="catalina.base" value="/private/var/folders/70/72r10qsn3_126t4sqxh17grm0000gn/T/tomcat.0.6458702323272637740"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/premkumar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="22.0.2+9-70"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="66.0"/>
+  </properties>
+  <testcase name="Test create userservice" classname="Feature: Tests the Chenile Workflow Service using a REST client. Userservice service exists and is under test." time="0.261">
+    <error type="java.lang.ExceptionInInitializerError"><![CDATA[java.lang.ExceptionInInitializerError
+	at org.chenile.cucumber.security.rest.RestCukesSecSteps.before(RestCukesSecSteps.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at cucumber.runtime.Utils$1.call(Utils.java:26)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:20)
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+	at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+	at cucumber.runner.TestStep.run(TestStep.java:50)
+	at cucumber.runner.TestCase.run(TestCase.java:42)
+	at cucumber.runner.Runner.runPickle(Runner.java:49)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
+Caused by: org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageName=quay.io/keycloak/keycloak:25.0, imagePullPolicy=DefaultPullPolicy(), imageNameSubstitutor=org.testcontainers.utility.ImageNameSubstitutor$LogWrappedImageNameSubstitutor@7d3879ed)
+	at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1364)
+	at org.testcontainers.containers.GenericContainer.logger(GenericContainer.java:671)
+	at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:138)
+	at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:126)
+	at dasniko.testcontainers.keycloak.KeycloakContainer.<init>(KeycloakContainer.java:24)
+	at org.chenile.security.test.BaseSecurityTest.<clinit>(BaseSecurityTest.java:51)
+	... 18 more
+Caused by: java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$getFirstValidStrategy$7(DockerClientProviderStrategy.java:277)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:268)
+	at org.testcontainers.DockerClientFactory.getOrInitializeStrategy(DockerClientFactory.java:152)
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:194)
+	at org.testcontainers.images.LocalImagesCache.get(LocalImagesCache.java:31)
+	at org.testcontainers.images.AbstractImagePullPolicy.shouldPull(AbstractImagePullPolicy.java:18)
+	at org.testcontainers.images.RemoteDockerImage.resolve(RemoteDockerImage.java:70)
+	at org.testcontainers.images.RemoteDockerImage.resolve(RemoteDockerImage.java:28)
+	at org.testcontainers.utility.LazyFuture.getResolvedValue(LazyFuture.java:20)
+	at org.testcontainers.utility.LazyFuture.get(LazyFuture.java:41)
+	at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1362)
+	... 23 more
+]]></error>
+    <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+20:05:49,266 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.14
+20:05:49,268 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - Here is a list of configurators discovered as a service, by rank: 
+20:05:49,268 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 -   org.springframework.boot.logging.logback.RootLogLevelConfigurator
+20:05:49,268 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - They will be invoked in order until ExecutionStatus.DO_NOT_INVOKE_NEXT_IF_ANY is returned.
+20:05:49,268 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - Constructed configurator of type class org.springframework.boot.logging.logback.RootLogLevelConfigurator
+20:05:49,270 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - org.springframework.boot.logging.logback.RootLogLevelConfigurator.configure() call lasted 0 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+20:05:49,271 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - Trying to configure with ch.qos.logback.classic.joran.SerializedModelConfigurator
+20:05:49,271 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - Constructed configurator of type class ch.qos.logback.classic.joran.SerializedModelConfigurator
+20:05:49,272 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.scmo]
+20:05:49,272 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.scmo]
+20:05:49,272 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - ch.qos.logback.classic.joran.SerializedModelConfigurator.configure() call lasted 1 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+20:05:49,272 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+20:05:49,273 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+20:05:49,273 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+20:05:49,274 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/premkumar/.m2/repository/org/chenile/stm/1.3.6/stm-1.3.6.jar!/logback.xml]
+20:05:49,279 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@76e9f00b - URL [jar:file:/Users/premkumar/.m2/repository/org/chenile/stm/1.3.6/stm-1.3.6.jar!/logback.xml] is not of type file
+20:05:49,330 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1733277949329)
+20:05:49,330 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - No 'scanPeriod' specified. Defaulting to 1 minutes
+20:05:49,330 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [jar:file:/Users/premkumar/.m2/repository/org/chenile/stm/1.3.6/stm-1.3.6.jar!/logback.xml] 
+20:05:49,330 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+20:05:49,334 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Adding LoggerContextListener of type [ch.qos.logback.classic.jul.LevelChangePropagator] to the object stack
+20:05:49,338 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Setting level of jul logger [org.junit] to null
+20:05:49,339 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating INFO level on Logger[ROOT] onto the JUL framework
+20:05:49,339 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Starting LoggerContextListener
+20:05:49,339 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [CONSOLE] not referenced. Skipping further processing.
+20:05:49,339 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [FILE]
+20:05:49,339 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+20:05:49,358 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1864074564 - No compression will be used
+20:05:49,359 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1864074564 - Will use the pattern log/logFile.%d{yyyy-MM-dd}.log for the active file
+20:05:49,368 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - The date pattern is 'yyyy-MM-dd' from file name pattern 'log/logFile.%d{yyyy-MM-dd}.log'.
+20:05:49,368 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Roll-over at midnight.
+20:05:49,369 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Setting initial period to 2024-12-04T02:05:49.369Z
+20:05:49,370 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+20:05:49,380 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Active log file name: log/logFile.2024-12-03.log
+20:05:49,380 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - File property is set to [null]
+20:05:49,380 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [ASYNC] not referenced. Skipping further processing.
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.ebee.bhive] to DEBUG
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating DEBUG level on Logger[com.ebee.bhive] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [javax.activation] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[javax.activation] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [javax.mail] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[javax.mail] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [javax.xml.bind] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[javax.xml.bind] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [ch.qos.logback] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[ch.qos.logback] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.codahale.metrics] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[com.codahale.metrics] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.ryantenney] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.sun.xml.internal.bind] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[com.sun.xml.internal.bind] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.zaxxer] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [net.sf.ehcache] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[net.sf.ehcache] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.apache] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to OFF
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.bson] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.bson] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate] to WARN
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+20:05:49,381 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.ejb.HibernatePersistence] to OFF
+20:05:49,381 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.web] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.security] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.cache] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thymeleaf] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.xnio] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.mangofactory.swagger] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[com.mangofactory.swagger] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.wordnik.swagger] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[com.wordnik.swagger] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [liquibase] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[liquibase] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi.transport] to WARN
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to DEBUG
+20:05:49,382 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@314b9e4b - Propagating DEBUG level on Logger[ROOT] onto the JUL framework
+20:05:49,382 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[ROOT]
+20:05:49,382 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@51dae791 - End of configuration.
+20:05:49,383 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@688a2c09 - Registering current configuration as safe fallback point
+20:05:49,383 |-INFO in ch.qos.logback.classic.util.ContextInitializer@6bfaa0a6 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 110 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+20:05:49,745 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@5f166f2e - URL [jar:file:/Users/premkumar/.m2/repository/org/chenile/stm/1.3.6/stm-1.3.6.jar!/logback.xml] is not of type file
+20:05:49,749 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1733277949749)
+20:05:49,749 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - No 'scanPeriod' specified. Defaulting to 1 minutes
+20:05:49,749 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [jar:file:/Users/premkumar/.m2/repository/org/chenile/stm/1.3.6/stm-1.3.6.jar!/logback.xml] 
+20:05:49,749 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+20:05:49,749 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Adding LoggerContextListener of type [ch.qos.logback.classic.jul.LevelChangePropagator] to the object stack
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.thymeleaf] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [ch.qos.logback] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.hibernate] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [liquibase] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [com.sun.xml.internal.bind] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.hibernate.validator] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [com.ebee.bhive] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.apache.catalina.startup.DigesterFactory] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.springframework] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [com.codahale.metrics] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.bson] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [javax.activation] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.springframework.security] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.springframework.web] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [net.sf.ehcache] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.hibernate.ejb.HibernatePersistence] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.apache] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.xnio] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [javax.mail] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [javax.xml.bind] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [com.mangofactory.swagger] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [com.zaxxer] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [org.springframework.cache] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [com.ryantenney] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [com.wordnik.swagger] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [io.undertow] to null
+20:05:49,749 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Setting level of jul logger [sun.rmi.transport] to null
+20:05:49,750 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating DEBUG level on Logger[ROOT] onto the JUL framework
+20:05:49,750 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Starting LoggerContextListener
+20:05:49,750 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [CONSOLE] not referenced. Skipping further processing.
+20:05:49,750 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [FILE]
+20:05:49,750 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+20:05:49,750 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1336922750 - No compression will be used
+20:05:49,750 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1336922750 - Will use the pattern log/logFile.%d{yyyy-MM-dd}.log for the active file
+20:05:49,750 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - The date pattern is 'yyyy-MM-dd' from file name pattern 'log/logFile.%d{yyyy-MM-dd}.log'.
+20:05:49,750 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Roll-over at midnight.
+20:05:49,750 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Setting initial period to 2024-12-04T02:05:49.750Z
+20:05:49,751 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+20:05:49,751 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Active log file name: log/logFile.2024-12-03.log
+20:05:49,751 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - File property is set to [null]
+20:05:49,751 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [ASYNC] not referenced. Skipping further processing.
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.ebee.bhive] to DEBUG
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating DEBUG level on Logger[com.ebee.bhive] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating DEBUG level on Logger[com.ebee.bhive] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [javax.activation] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[javax.activation] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[javax.activation] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [javax.mail] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[javax.mail] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[javax.mail] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [javax.xml.bind] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[javax.xml.bind] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[javax.xml.bind] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [ch.qos.logback] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[ch.qos.logback] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[ch.qos.logback] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.codahale.metrics] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[com.codahale.metrics] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[com.codahale.metrics] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.ryantenney] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.sun.xml.internal.bind] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[com.sun.xml.internal.bind] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[com.sun.xml.internal.bind] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.zaxxer] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [net.sf.ehcache] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[net.sf.ehcache] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[net.sf.ehcache] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.apache] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.apache] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to OFF
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.bson] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.bson] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.bson] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.ejb.HibernatePersistence] to OFF
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.web] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.security] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.cache] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thymeleaf] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.xnio] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.mangofactory.swagger] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[com.mangofactory.swagger] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[com.mangofactory.swagger] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.wordnik.swagger] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[com.wordnik.swagger] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[com.wordnik.swagger] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [liquibase] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[liquibase] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[liquibase] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi.transport] to WARN
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6cd66f6a - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@1ef93e01 - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+20:05:49,751 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to DEBUG
+20:05:49,751 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[ROOT]
+20:05:49,751 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@d512c1 - End of configuration.
+20:05:49,752 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@578b2dec - Registering current configuration as safe fallback point
+
+       _                _ _        _            _
+    ___| |__   ___ _ __ (_) | ___  | |_ ___  ___| |_
+   / __| '_ \ / _ \ '_ \| | |/ _ \ | __/ _ \/ __| __|
+  | (__| | | |  __/ | | | | |  __/ | ||  __/\__ \ |_
+   \___|_| |_|\___|_| |_|_|_|\___|  \__\___||___/\__|
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+]]></system-out>
+  </testcase>
+  <testcase name="Retrieve the userservice that just got created" classname="Feature: Tests the Chenile Workflow Service using a REST client. Userservice service exists and is under test." time="0.0">
+    <error message="Could not initialize class org.chenile.security.test.BaseSecurityTest" type="java.lang.NoClassDefFoundError"><![CDATA[java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+	at org.chenile.cucumber.security.rest.RestCukesSecSteps.before(RestCukesSecSteps.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at cucumber.runtime.Utils$1.call(Utils.java:26)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:20)
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+	at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+	at cucumber.runner.TestStep.run(TestStep.java:50)
+	at cucumber.runner.TestCase.run(TestCase.java:42)
+	at cucumber.runner.Runner.runPickle(Runner.java:49)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
+Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageName=quay.io/keycloak/keycloak:25.0, imagePullPolicy=DefaultPullPolicy(), imageNameSubstitutor=org.testcontainers.utility.ImageNameSubstitutor$LogWrappedImageNameSubstitutor@7d3879ed) [in thread "main"]
+	at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1364)
+	at org.testcontainers.containers.GenericContainer.logger(GenericContainer.java:671)
+	at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:138)
+	at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:126)
+	at dasniko.testcontainers.keycloak.KeycloakContainer.<init>(KeycloakContainer.java:24)
+	at org.chenile.security.test.BaseSecurityTest.<clinit>(BaseSecurityTest.java:51)
+	... 18 more
+]]></error>
+  </testcase>
+  <testcase name="Assign the userservice to an assignee with comments" classname="Feature: Tests the Chenile Workflow Service using a REST client. Userservice service exists and is under test." time="0.001">
+    <failure message="Multiple Failures (2 failures)&#10;	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest&#10;	cucumber.runtime.junit.UndefinedThrowable: The step &quot;I PATCH a REST request to URL &quot;/userservice/${id}/assign&quot; with payload&quot; is undefined" type="org.opentest4j.MultipleFailuresError"><![CDATA[org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+	cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/assign" with payload" is undefined
+	at cucumber.runtime.junit.JUnitReporter$EachTestNotifier.fireTestFinished(JUnitReporter.java:252)
+	at cucumber.runtime.junit.JUnitReporter.handleTestCaseResult(JUnitReporter.java:177)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:65)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:61)
+	at cucumber.runner.AbstractEventPublisher.send(AbstractEventPublisher.java:45)
+	at cucumber.runner.AbstractEventBus.send(AbstractEventBus.java:9)
+	at cucumber.runner.ThreadLocalRunnerSupplier$LocalEventBus.send(ThreadLocalRunnerSupplier.java:60)
+	at cucumber.runner.TestCase.run(TestCase.java:55)
+	at cucumber.runner.Runner.runPickle(Runner.java:49)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
+	Suppressed: java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+		at org.chenile.cucumber.security.rest.RestCukesSecSteps.before(RestCukesSecSteps.java:34)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at cucumber.runtime.Utils$1.call(Utils.java:26)
+		at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+		at cucumber.runtime.Utils.invoke(Utils.java:20)
+		at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+		at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
+		at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+		at cucumber.runner.TestStep.run(TestStep.java:50)
+		at cucumber.runner.TestCase.run(TestCase.java:42)
+		... 8 more
+	Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageName=quay.io/keycloak/keycloak:25.0, imagePullPolicy=DefaultPullPolicy(), imageNameSubstitutor=org.testcontainers.utility.ImageNameSubstitutor$LogWrappedImageNameSubstitutor@7d3879ed) [in thread "main"]
+		at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1364)
+		at org.testcontainers.containers.GenericContainer.logger(GenericContainer.java:671)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:138)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:126)
+		at dasniko.testcontainers.keycloak.KeycloakContainer.<init>(KeycloakContainer.java:24)
+		at org.chenile.security.test.BaseSecurityTest.<clinit>(BaseSecurityTest.java:51)
+		... 18 more
+	Suppressed: cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/assign" with payload" is undefined
+]]></failure>
+  </testcase>
+  <testcase name="Resolve the userservice with comments" classname="Feature: Tests the Chenile Workflow Service using a REST client. Userservice service exists and is under test." time="0.001">
+    <failure message="Multiple Failures (2 failures)&#10;	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest&#10;	cucumber.runtime.junit.UndefinedThrowable: The step &quot;I PATCH a REST request to URL &quot;/userservice/${id}/resolve&quot; with payload&quot; is undefined" type="org.opentest4j.MultipleFailuresError"><![CDATA[org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+	cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/resolve" with payload" is undefined
+	at cucumber.runtime.junit.JUnitReporter$EachTestNotifier.fireTestFinished(JUnitReporter.java:252)
+	at cucumber.runtime.junit.JUnitReporter.handleTestCaseResult(JUnitReporter.java:177)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:65)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:61)
+	at cucumber.runner.AbstractEventPublisher.send(AbstractEventPublisher.java:45)
+	at cucumber.runner.AbstractEventBus.send(AbstractEventBus.java:9)
+	at cucumber.runner.ThreadLocalRunnerSupplier$LocalEventBus.send(ThreadLocalRunnerSupplier.java:60)
+	at cucumber.runner.TestCase.run(TestCase.java:55)
+	at cucumber.runner.Runner.runPickle(Runner.java:49)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
+	Suppressed: java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+		at org.chenile.cucumber.security.rest.RestCukesSecSteps.before(RestCukesSecSteps.java:34)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at cucumber.runtime.Utils$1.call(Utils.java:26)
+		at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+		at cucumber.runtime.Utils.invoke(Utils.java:20)
+		at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+		at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
+		at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+		at cucumber.runner.TestStep.run(TestStep.java:50)
+		at cucumber.runner.TestCase.run(TestCase.java:42)
+		... 8 more
+	Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageName=quay.io/keycloak/keycloak:25.0, imagePullPolicy=DefaultPullPolicy(), imageNameSubstitutor=org.testcontainers.utility.ImageNameSubstitutor$LogWrappedImageNameSubstitutor@7d3879ed) [in thread "main"]
+		at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1364)
+		at org.testcontainers.containers.GenericContainer.logger(GenericContainer.java:671)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:138)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:126)
+		at dasniko.testcontainers.keycloak.KeycloakContainer.<init>(KeycloakContainer.java:24)
+		at org.chenile.security.test.BaseSecurityTest.<clinit>(BaseSecurityTest.java:51)
+		... 18 more
+	Suppressed: cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/resolve" with payload" is undefined
+]]></failure>
+  </testcase>
+  <testcase name="Close the userservice with comments" classname="Feature: Tests the Chenile Workflow Service using a REST client. Userservice service exists and is under test." time="0.001">
+    <failure message="Multiple Failures (2 failures)&#10;	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest&#10;	cucumber.runtime.junit.UndefinedThrowable: The step &quot;I PATCH a REST request to URL &quot;/userservice/${id}/close&quot; with payload&quot; is undefined" type="org.opentest4j.MultipleFailuresError"><![CDATA[org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+	cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/close" with payload" is undefined
+	at cucumber.runtime.junit.JUnitReporter$EachTestNotifier.fireTestFinished(JUnitReporter.java:252)
+	at cucumber.runtime.junit.JUnitReporter.handleTestCaseResult(JUnitReporter.java:177)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:65)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:61)
+	at cucumber.runner.AbstractEventPublisher.send(AbstractEventPublisher.java:45)
+	at cucumber.runner.AbstractEventBus.send(AbstractEventBus.java:9)
+	at cucumber.runner.ThreadLocalRunnerSupplier$LocalEventBus.send(ThreadLocalRunnerSupplier.java:60)
+	at cucumber.runner.TestCase.run(TestCase.java:55)
+	at cucumber.runner.Runner.runPickle(Runner.java:49)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
+	Suppressed: java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+		at org.chenile.cucumber.security.rest.RestCukesSecSteps.before(RestCukesSecSteps.java:34)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at cucumber.runtime.Utils$1.call(Utils.java:26)
+		at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+		at cucumber.runtime.Utils.invoke(Utils.java:20)
+		at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+		at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
+		at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+		at cucumber.runner.TestStep.run(TestStep.java:50)
+		at cucumber.runner.TestCase.run(TestCase.java:42)
+		... 8 more
+	Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageName=quay.io/keycloak/keycloak:25.0, imagePullPolicy=DefaultPullPolicy(), imageNameSubstitutor=org.testcontainers.utility.ImageNameSubstitutor$LogWrappedImageNameSubstitutor@7d3879ed) [in thread "main"]
+		at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1364)
+		at org.testcontainers.containers.GenericContainer.logger(GenericContainer.java:671)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:138)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:126)
+		at dasniko.testcontainers.keycloak.KeycloakContainer.<init>(KeycloakContainer.java:24)
+		at org.chenile.security.test.BaseSecurityTest.<clinit>(BaseSecurityTest.java:51)
+		... 18 more
+	Suppressed: cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/close" with payload" is undefined
+]]></failure>
+  </testcase>
+  <testcase name="Assign a closed userservice to someone. This will err out." classname="Feature: Tests the Chenile Workflow Service using a REST client. Userservice service exists and is under test." time="0.0">
+    <failure message="Multiple Failures (2 failures)&#10;	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest&#10;	cucumber.runtime.junit.UndefinedThrowable: The step &quot;I PATCH a REST request to URL &quot;/userservice/${id}/assign&quot; with payload&quot; is undefined" type="org.opentest4j.MultipleFailuresError"><![CDATA[org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+	cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/assign" with payload" is undefined
+	at cucumber.runtime.junit.JUnitReporter$EachTestNotifier.fireTestFinished(JUnitReporter.java:252)
+	at cucumber.runtime.junit.JUnitReporter.handleTestCaseResult(JUnitReporter.java:177)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:65)
+	at cucumber.runtime.junit.JUnitReporter$4.receive(JUnitReporter.java:61)
+	at cucumber.runner.AbstractEventPublisher.send(AbstractEventPublisher.java:45)
+	at cucumber.runner.AbstractEventBus.send(AbstractEventBus.java:9)
+	at cucumber.runner.ThreadLocalRunnerSupplier$LocalEventBus.send(ThreadLocalRunnerSupplier.java:60)
+	at cucumber.runner.TestCase.run(TestCase.java:55)
+	at cucumber.runner.Runner.runPickle(Runner.java:49)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
+	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
+	Suppressed: java.lang.NoClassDefFoundError: Could not initialize class org.chenile.security.test.BaseSecurityTest
+		at org.chenile.cucumber.security.rest.RestCukesSecSteps.before(RestCukesSecSteps.java:34)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at cucumber.runtime.Utils$1.call(Utils.java:26)
+		at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+		at cucumber.runtime.Utils.invoke(Utils.java:20)
+		at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
+		at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
+		at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+		at cucumber.runner.TestStep.run(TestStep.java:50)
+		at cucumber.runner.TestCase.run(TestCase.java:42)
+		... 8 more
+	Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerFetchException: Can't get Docker image: RemoteDockerImage(imageName=quay.io/keycloak/keycloak:25.0, imagePullPolicy=DefaultPullPolicy(), imageNameSubstitutor=org.testcontainers.utility.ImageNameSubstitutor$LogWrappedImageNameSubstitutor@7d3879ed) [in thread "main"]
+		at org.testcontainers.containers.GenericContainer.getDockerImageName(GenericContainer.java:1364)
+		at org.testcontainers.containers.GenericContainer.logger(GenericContainer.java:671)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:138)
+		at dasniko.testcontainers.keycloak.ExtendableKeycloakContainer.<init>(ExtendableKeycloakContainer.java:126)
+		at dasniko.testcontainers.keycloak.KeycloakContainer.<init>(KeycloakContainer.java:24)
+		at org.chenile.security.test.BaseSecurityTest.<clinit>(BaseSecurityTest.java:51)
+		... 18 more
+	Suppressed: cucumber.runtime.junit.UndefinedThrowable: The step "I PATCH a REST request to URL "/userservice/${id}/assign" with payload" is undefined
+]]></failure>
+  </testcase>
+</testsuite>
