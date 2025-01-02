@@ -1,0 +1,196 @@
+@startuml
+
+entity "attendance" {
+  + id : varchar(255)
+  + current_attendance : int
+  + sla_late : int
+  + sla_tending_late : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + bus_id : varchar(255)
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + last_modified_by : varchar(255)
+  + state_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "bus" {
+  + id : varchar(255)
+  + capacity : int
+  + sla_late : int
+  + sla_tending_late : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + attendance_id : varchar(255)
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + license_plate : varchar(255)
+  + state_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "bus_loction" {
+  + id : varchar(255)
+  + latitude : double
+  + longitude : double
+  + sla_late : int
+  + sla_tending_late : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + last_modified_by : varchar(255)
+  + state_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "bus_schedule" {
+  + id : varchar(255)
+  + sla_late : int
+  + sla_tending_late : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + route_bus_stops_id : varchar(255)
+  + state_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "busstop" {
+  + id : varchar(255)
+  + latitude : double
+  + longitude : double
+  + sla_late : int
+  + sla_tending_late : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + busstop_code : varchar(20)
+  + busstop_type : varchar(50)
+  + busstop_name : varchar(100)
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + last_modified_by : varchar(255)
+  + state_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "college" {
+  + id : varchar(255)
+  + sla_late : int
+  + sla_tending_late : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + college_address : varchar(255)
+  + college_email : varchar(255)
+  + college_name : varchar(255)
+  + college_phone : varchar(255)
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + last_modified_by : varchar(255)
+  + state_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "route" {
+  + id : varchar(255)
+  + sla_late : int
+  + sla_tending_late : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + route_code : varchar(20)
+  + route_type : varchar(50)
+  + route_name : varchar(100)
+  + college_id : varchar(255)
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + route_desc : varchar(255)
+  + state_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "route_bus_stops" {
+  + id : varchar(255)
+  + busstop_order : int
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + version : bigint
+  + bus_id : varchar(255)
+  + busstop_id : varchar(255)
+  + created_by : varchar(255)
+  + last_modified_by : varchar(255)
+  + route_id : varchar(255)
+  + tenant : varchar(255)
+}
+
+entity "student" {
+  + id : varchar(255)
+  + sla_late : int
+  + sla_tending_late : int
+  + student_birthday : date
+  + test_entity : bit(1)
+  + created_time : datetime(6)
+  + last_modified_time : datetime(6)
+  + sla_red_date : datetime(6)
+  + sla_yellow_date : datetime(6)
+  + state_entry_time : datetime(6)
+  + version : bigint
+  + college_id : varchar(255)
+  + created_by : varchar(255)
+  + flow_id : varchar(255)
+  + student_address : varchar(255)
+  + student_email : varchar(255)
+  + student_gender : varchar(255)
+  + student_name : varchar(255)
+  + student_password : varchar(255)
+  + student_phone : varchar(255)
+  + student_school : varchar(255)
+  + tenant : varchar(255)
+}
+
+attendance -- "1" bus : "bus_id"
+bus -- "1" attendance : "attendance_id"
+bus_schedule -- "1" route_bus_stops : "route_bus_stops_id"
+busstop -- "1" route_bus_stops : "busstop_id"
+route_bus_stops -- "1" bus : "bus_id"
+route_bus_stops -- "1" route : "route_id"
+student -- "1" college : "college_id"
+
+@enduml

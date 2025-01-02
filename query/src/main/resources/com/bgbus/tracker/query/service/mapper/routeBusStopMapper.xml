@@ -1,0 +1,28 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="routeBusStopMapper">
+
+    <!-- Result Map for mapping bus stop names and order -->
+    <resultMap id="RouteBusStopResultMap" type="map">
+        <result property="busStopName" column="BUSSTOP_NAME"/>
+        <result property="busStopOrder" column="BUSSTOP_ORDER"/>
+    </resultMap>
+
+    <!-- Query to get all bus stops for a given route with pagination and order -->
+    <select id="getRouteBusStopMapper" resultMap="RouteBusStopResultMap">
+        SELECT
+        bs.BUSSTOP_NAME, rbs.BUSSTOP_ORDER
+        FROM
+        ROUTE_BUS_STOPS rbs
+        JOIN
+        BUSSTOP bs ON rbs.BUSSTOP_ID = bs.ID
+        <where>
+            <if test="routeId != null">
+                rbs.ROUTE_ID = #{routeId}
+            </if>
+
+        </where>
+        ORDER BY rbs.BUSSTOP_ORDER
+    </select>
+
+
+</mapper>

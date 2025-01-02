@@ -1,0 +1,18 @@
+[
+  {
+    "id": "routeBusStopMapper.getRouteBusStopMapper",
+    "name": "getRouteBusStopMapper",
+    "columnMetadata": {
+      "routeId" : {
+        "name": "routeId",
+        "filterable": true,
+        "containsQuery": true,
+        "columnType": "Text"
+      }
+    },
+    "flexiblePropnames": false,
+    "paginated" : false,
+    "sortable" : false
+  }
+
+]

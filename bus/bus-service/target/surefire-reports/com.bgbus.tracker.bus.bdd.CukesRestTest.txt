@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.bgbus.tracker.bus.bdd.CukesRestTest
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 17.85 s -- in com.bgbus.tracker.bus.bdd.CukesRestTest

@@ -2,18 +2,21 @@ package com.bgbus.tracker.tracker.model;
 
 import java.io.Serial;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.bgbus.tracker.bus.model.Bus;
+import com.bgbus.tracker.model.Location;
+import jakarta.persistence.*;
 import org.chenile.jpautils.entity.AbstractJpaStateEntity;
+import org.hibernate.mapping.ToOne;
+
 @Entity
-@Table(name = "tracker")
+@Table(name = "bus_loction")
 public class Tracker extends AbstractJpaStateEntity{
     @Serial
 	private static final long serialVersionUID = 1L;
-	public String assignee;
-	public String assignComment;
-	public String closeComment;
-	public String resolveComment;
-	public String description;
-	public String openedBy;
+//	@OneToOne
+//	@JoinColumn(name = "bus_id")
+//	private Bus busId;
+	@Embedded
+	private Location location;
+
 }

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "login.login",
+    "name": "login",
+    "columnMetadata": {
+      "email" : {
+        "name": "email",
+        "filterable": true,
+        "containsQuery": true,
+        "columnType": "Text"
+      },
+      "password" : {
+        "name": "password",
+        "columnType" : "Text",
+        "containsQuery": true,
+        "filterable": true
+      }
+    },
+    "flexiblePropnames": false,
+    "paginated" : false,
+    "sortable" : false
+  }
+
+]

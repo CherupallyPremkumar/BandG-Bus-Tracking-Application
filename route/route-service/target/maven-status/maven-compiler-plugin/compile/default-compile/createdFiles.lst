@@ -1,9 +1,0 @@
-com/bgbus/tracker/route/configuration/dao/RouteRepository.class
-com/bgbus/tracker/route/service/cmds/CloseRouteAction.class
-com/bgbus/tracker/route/configuration/controller/RouteController.class
-com/bgbus/tracker/route/service/healthcheck/RouteHealthChecker.class
-com/bgbus/tracker/route/service/cmds/AssignRouteAction.class
-com/bgbus/tracker/route/service/cmds/ResolveRouteAction.class
-com/bgbus/tracker/route/configuration/RouteConfiguration.class
-com/bgbus/tracker/route/service/errorcodes/ErrorCodes.class
-com/bgbus/tracker/route/service/store/RouteEntityStore.class

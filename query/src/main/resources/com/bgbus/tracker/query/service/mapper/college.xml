@@ -1,0 +1,23 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CollegeMapper">
+
+    <!-- ResultMap for College -->
+    <resultMap id="collegeResultMap" type="map">
+        <id property="id" column="id"/>
+        <result property="collegeName" column="college_name"/>
+    </resultMap>
+
+    <!-- Query to fetch colleges based on user input -->
+    <select id="getCollegesByName" resultMap="collegeResultMap">
+        SELECT
+            id,
+            college_name
+        FROM
+            COLLEGE
+        WHERE
+        <if test="collegeName != null">
+            and    bs1.college.name like #{collegeName}
+        </if>
+    </select>
+
+</mapper>

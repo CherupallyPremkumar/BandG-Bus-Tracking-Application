@@ -1,0 +1,148 @@
+CREATE DATABASE BandGBus;
+
+USE BandGBus;
+CREATE TABLE BandGBus.college (
+    id varchar(50) NOT NULL PRIMARY KEY,
+    college_address VARCHAR(255) NOT NULL,
+    college_email VARCHAR(255) NOT NULL,
+    college_name VARCHAR(255) NOT NULL,
+    college_phone VARCHAR(20) NOT NULL,
+    created_by VARCHAR(255) NOT NULL,
+    created_time DATETIME NOT NULL,
+    last_modified_by VARCHAR(255),
+    last_modified_time DATETIME,
+    tenant VARCHAR(255) NOT NULL,
+    test_entity VARCHAR(255),
+    version INT NOT NULL
+);
+-- Create ROUTE table
+CREATE TABLE ROUTE (
+                       ID VARCHAR(50) PRIMARY KEY,
+                       ROUTE_CODE VARCHAR(50),
+                       TEST_ENTITY BOOLEAN,
+                       ROUTE_NAME VARCHAR(100),
+                       ROUTE_TYPE VARCHAR(50),
+                       ROUTE_DESC TEXT,
+                       SLA_LATE BOOLEAN,
+                       SLA_TENDING_LATE BOOLEAN,
+                       SLA_RED_DATE DATE,
+                       SLA_YELLOW_DATE DATE,
+                       STATE_ENTRY_TIME TIMESTAMP,
+                       VERSION INT,
+                       CREATED_TIME TIMESTAMP,
+                       LAST_MODIFIED_TIME TIMESTAMP,
+                       CREATED_BY VARCHAR(50),
+                       LAST_MODIFIED_BY VARCHAR(50),
+                       STATE_ID INT,
+                       TENANT VARCHAR(50)
+);
+
+-- Create BUSSTOP table
+CREATE TABLE BUSSTOP (
+                         ID VARCHAR(50) PRIMARY KEY,
+                         BUSSTOP_CODE VARCHAR(50),
+                         TEST_ENTITY BOOLEAN,
+                         BUSSTOP_TYPE VARCHAR(50),
+                         BUSSTOP_NAME VARCHAR(100),
+                         LATITUDE DOUBLE,
+                         LONGITUDE DOUBLE,
+                         SLA_LATE BOOLEAN,
+                         SLA_TENDING_LATE BOOLEAN,
+                         SLA_RED_DATE DATE,
+                         SLA_YELLOW_DATE DATE,
+                         STATE_ENTRY_TIME TIMESTAMP,
+                         VERSION INT,
+                         CREATED_TIME TIMESTAMP,
+                         LAST_MODIFIED_TIME TIMESTAMP,
+                         CREATED_BY VARCHAR(50),
+                         LAST_MODIFIED_BY VARCHAR(50),
+                         STATE_ID INT,
+                         TENANT VARCHAR(50)
+);
+
+-- Create BUS table
+CREATE TABLE BUS (
+                     ID VARCHAR(50) PRIMARY KEY,
+                     LICENSE_PLATE VARCHAR(50),
+                     TEST_ENTITY BOOLEAN,
+                     CAPACITY INT,
+                     STATE_ID INT,
+                     TENANT VARCHAR(50),
+                     CREATED_TIME TIMESTAMP,
+                     LAST_MODIFIED_TIME TIMESTAMP,
+                     CREATED_BY VARCHAR(50),
+                     LAST_MODIFIED_BY VARCHAR(50),
+                     SLA_LATE BOOLEAN,
+                     SLA_TENDING_LATE BOOLEAN,
+                     SLA_RED_DATE DATE,
+                     SLA_YELLOW_DATE DATE,
+                     STATE_ENTRY_TIME TIMESTAMP,
+                     VERSION INT
+);
+
+-- Create ROUTE_BUS_STOPS table (Relationship between ROUTE and BUSSTOP)
+CREATE TABLE ROUTE_BUS_STOPS (
+                                 ID VARCHAR(50) PRIMARY KEY,
+                                 TEST_ENTITY BOOLEAN,
+                                 ROUTE_ID VARCHAR(50),
+                                 BUSSTOP_ID VARCHAR(50),
+                                 BUS_ID VARCHAR(50),
+                                 BUSSTOP_ORDER INT,
+                                 CREATED_TIME TIMESTAMP,
+                                 LAST_MODIFIED_TIME TIMESTAMP,
+                                 CREATED_BY VARCHAR(50),
+                                 LAST_MODIFIED_BY VARCHAR(50),
+                                 TENANT VARCHAR(50),
+                                 VERSION INT,
+                                 PRIMARY KEY (ROUTE_ID, BUSSTOP_ID),
+                                 FOREIGN KEY (ROUTE_ID) REFERENCES ROUTE(ID),
+                                 FOREIGN KEY (BUSSTOP_ID) REFERENCES BUSSTOP(ID),
+                                 FOREIGN KEY (BUS_ID) REFERENCES BUS(ID)
+);
+
+-- Create STUDENT table
+CREATE TABLE STUDENT (
+                         ID VARCHAR(50) PRIMARY KEY,
+                         TEST_ENTITY BOOLEAN,
+                         STUDENT_NAME VARCHAR(100),
+                         STUDENT_EMAIL VARCHAR(100),
+                         STUDENT_PHONE VARCHAR(20),
+                         STUDENT_ADDRESS VARCHAR(255),
+                         STUDENT_GENDER VARCHAR(10),
+                         STUDENT_SCHOOL VARCHAR(100),
+                         STUDENT_PASSWORD VARCHAR(100),
+                         STUDENT_BIRTHDAY DATE,
+                         SLA_LATE BOOLEAN,
+                         SLA_TENDING_LATE BOOLEAN,
+                         SLA_RED_DATE DATE,
+                         SLA_YELLOW_DATE DATE,
+                         STATE_ENTRY_TIME TIMESTAMP,
+                         VERSION INT,
+                         CREATED_TIME TIMESTAMP,
+                         LAST_MODIFIED_TIME TIMESTAMP,
+                         CREATED_BY VARCHAR(50),
+                         LAST_MODIFIED_BY VARCHAR(50),
+                         STATE_ID INT,
+                         TENANT VARCHAR(50)
+);
+
+-- Create ATTENDANCE table
+CREATE TABLE ATTENDANCE (
+                            ID VARCHAR(50) PRIMARY KEY,
+                            TEST_ENTITY BOOLEAN,
+                            BUS_ID VARCHAR(50),
+                            CURRENT_ATTENDANCE INT,
+                            SLA_LATE BOOLEAN,
+                            SLA_TENDING_LATE BOOLEAN,
+                            SLA_RED_DATE DATE,
+                            SLA_YELLOW_DATE DATE,
+                            STATE_ENTRY_TIME TIMESTAMP,
+                            VERSION INT,
+                            CREATED_TIME TIMESTAMP,
+                            LAST_MODIFIED_TIME TIMESTAMP,
+                            CREATED_BY VARCHAR(50),
+                            LAST_MODIFIED_BY VARCHAR(50),
+                            STATE_ID INT,
+                            TENANT VARCHAR(50),
+                            FOREIGN KEY (BUS_ID) REFERENCES BUS(ID)
+);

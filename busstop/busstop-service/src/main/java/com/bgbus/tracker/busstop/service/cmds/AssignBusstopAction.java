@@ -14,8 +14,7 @@ public class AssignBusstopAction implements STMTransitionAction<Busstop>{
 	public void doTransition(Busstop busstop, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		AssignBusstopPayload payload = (AssignBusstopPayload) transitionParam;
-		busstop.assignee = payload.assignee;
-		busstop.assignComment = payload.getComment();
+
 	}
 
 }

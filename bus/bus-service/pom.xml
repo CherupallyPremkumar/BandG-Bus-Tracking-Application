@@ -19,7 +19,6 @@
 			<groupId>com.bgbus.tracker.bus</groupId>
 			<artifactId>bus-api</artifactId>
 		</dependency>
-	
 		<dependency>
 			<groupId>org.chenile</groupId>
             <artifactId>workflow-service</artifactId>

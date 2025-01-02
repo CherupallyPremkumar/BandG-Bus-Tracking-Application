@@ -14,7 +14,7 @@ public class ResolveStudentAction implements STMTransitionAction<Student>{
 	public void doTransition(Student student, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		MinimalPayload payload = (MinimalPayload) transitionParam;
-		student.resolveComment = payload.getComment();
+
 	}
 
 }

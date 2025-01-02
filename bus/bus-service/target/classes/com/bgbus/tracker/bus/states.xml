@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <states>
-	<event-information eventId='assign'
-                       meta-bodyType='com.bgbus.tracker.bus.model.AssignBusPayload'
+	<event-information eventId='maintenance'
+                       meta-bodyType='com.bgbus.tracker.bus.model.payload.StartMaintenancePayload'
                        meta-acls="test.premium"
     />
-	<event-information eventId='resolve'
-                       meta-bodyType='org.chenile.workflow.param.MinimalPayload'
+	<event-information eventId='break'
+                       meta-bodyType='org.chenile.workflow.param.StartBreakPayload'
                        meta-acls="test.premium"
     />
-	<event-information eventId='close'
-                       meta-bodyType='org.chenile.workflow.param.MinimalPayload'
+	<event-information eventId='repaired'
+                       meta-bodyType='org.chenile.workflow.param.CompleteRepairPayload'
+                       meta-acls="test.premium"
+    />	<event-information eventId='finishedMaintenance'
+                       meta-bodyType='org.chenile.workflow.param.CompleteMaintenancePayload'
+                       meta-acls="test.premium"
+    /><event-information eventId='void'
+                       meta-bodyType='org.chenile.workflow.param.TerminateBusPayload'
                        meta-acls="test.premium"
     />
 	<default-transition-action componentName="busBaseTransitionAction"/>
 	
-	<flow id='test-flow' default='true'>
+	<flow id='bus-flow' default='true'>
 		<entry-action componentName="busEntryAction"/>
 		<exit-action componentName="busExitAction"/>
         <security-strategy componentName="stmSecurityStrategy"/>
-		<manual-state id='OPENED' initialState='true'>
-			<on eventId='assign'  newStateId='ASSIGNED' componentName='assignBus'/>
+		<manual-state id='IN_SERVICE' initialState='true'>
+			<on eventId='maintenance'  newStateId='OUT_OF_SERVICE' componentName='startMaintenanceAction'/>
+			<on eventId='break'  newStateId='UNDER_MAINTENANCE' componentName='startBreakAction'/>
 		</manual-state>
 
-		<manual-state id='ASSIGNED'>
-			<on eventId='resolve' newStateId='RESOLVED' componentName='resolveBus'/>
+		<manual-state id='OUT_OF_SERVICE'>
+			<on eventId='repaired' newStateId='IN_SERVICE' componentName='completeRepairAction'/>
 		</manual-state>
-		<manual-state id='RESOLVED'>
-			<on eventId='close' newStateId='CLOSED' componentName='closeBus'/>
+		<manual-state id='UNDER_MAINTENANCE'>
+			<on eventId='finishedMaintenance' newStateId='IN_SERVICE' componentName='completeMaintenanceAction'/>
+			<on eventId='void' newStateId='VOID' componentName='terminateBusAction'/>
 		</manual-state>
-		<manual-state id='CLOSED' />
+		<manual-state id='VOID'/>
 	</flow>
 	
 </states>

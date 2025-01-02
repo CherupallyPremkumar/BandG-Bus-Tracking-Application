@@ -14,8 +14,7 @@ public class AssignStudentAction implements STMTransitionAction<Student>{
 	public void doTransition(Student student, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		AssignStudentPayload payload = (AssignStudentPayload) transitionParam;
-		student.assignee = payload.assignee;
-		student.assignComment = payload.getComment();
+
 	}
 
 }

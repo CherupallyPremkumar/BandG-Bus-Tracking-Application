@@ -1,42 +1,223 @@
-DROP TABLE IF EXISTS query;
 
-CREATE TABLE query (ID INT PRIMARY KEY, name VARCHAR(25),branch VARCHAR(25),percentage int, phone VARCHAR(25),email VARCHAR(25));
+CREATE TABLE college (
+                                  id varchar(50) NOT NULL PRIMARY KEY,
+                                  college_address VARCHAR(255) NOT NULL,
+                                  college_email VARCHAR(255) NOT NULL,
+                                  college_name VARCHAR(255) NOT NULL,
+                                  college_phone VARCHAR(20) NOT NULL,
+                                  created_by VARCHAR(255) NOT NULL,
+                                  created_time DATETIME NOT NULL,
+                                  last_modified_by VARCHAR(255),
+                                  last_modified_time DATETIME,
+                                  tenant VARCHAR(255) NOT NULL,
+                                  test_entity VARCHAR(255),
+                                  version INT NOT NULL
+);
+-- Create ROUTE table
+CREATE TABLE ROUTE (
+                       ID VARCHAR(50) PRIMARY KEY,
+                       ROUTE_CODE VARCHAR(50),
+                       TEST_ENTITY BOOLEAN,
+                       ROUTE_NAME VARCHAR(100),
+                       ROUTE_TYPE VARCHAR(50),
+                       ROUTE_DESC TEXT,
+                       SLA_LATE BOOLEAN,
+                       SLA_TENDING_LATE BOOLEAN,
+                       SLA_RED_DATE DATE,
+                       SLA_YELLOW_DATE DATE,
+                       STATE_ENTRY_TIME TIMESTAMP,
+                       VERSION INT,
+                       CREATED_TIME TIMESTAMP,
+                       LAST_MODIFIED_TIME TIMESTAMP,
+                       CREATED_BY VARCHAR(50),
+                       LAST_MODIFIED_BY VARCHAR(50),
+                       STATE_ID INT,
+                       TENANT VARCHAR(50)
+);
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (1,'James','Chennai',45,'9988765700','james@mera.com');
+-- Create BUSSTOP table
+CREATE TABLE BUSSTOP (
+                         ID VARCHAR(50) PRIMARY KEY,
+                         BUSSTOP_CODE VARCHAR(50),
+                         TEST_ENTITY BOOLEAN,
+                         BUSSTOP_TYPE VARCHAR(50),
+                         BUSSTOP_NAME VARCHAR(100),
+                         LATITUDE DOUBLE,
+                         LONGITUDE DOUBLE,
+                         SLA_LATE BOOLEAN,
+                         SLA_TENDING_LATE BOOLEAN,
+                         SLA_RED_DATE DATE,
+                         SLA_YELLOW_DATE DATE,
+                         STATE_ENTRY_TIME TIMESTAMP,
+                         VERSION INT,
+                         CREATED_TIME TIMESTAMP,
+                         LAST_MODIFIED_TIME TIMESTAMP,
+                         CREATED_BY VARCHAR(50),
+                         LAST_MODIFIED_BY VARCHAR(50),
+                         STATE_ID INT,
+                         TENANT VARCHAR(50)
+);
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (2,'John','Bangalore',56,'9988765701','john@mera.com');
+-- Create BUS table
+CREATE TABLE BUS (
+                     ID VARCHAR(50) PRIMARY KEY,
+                     LICENSE_PLATE VARCHAR(50),
+                     TEST_ENTITY BOOLEAN,
+                     CAPACITY INT,
+                     STATE_ID VARCHAR(50),
+                     TENANT VARCHAR(50),
+                     CREATED_TIME TIMESTAMP,
+                     LAST_MODIFIED_TIME TIMESTAMP,
+                     CREATED_BY VARCHAR(50),
+                     LAST_MODIFIED_BY VARCHAR(50),
+                     SLA_LATE BOOLEAN,
+                     SLA_TENDING_LATE BOOLEAN,
+                     SLA_RED_DATE DATE,
+                     SLA_YELLOW_DATE DATE,
+                     STATE_ENTRY_TIME TIMESTAMP,
+                     VERSION INT
+);
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (3,'Mohan','Delhi',79,'9988765702','mohan@mera.com');
+-- Create ROUTE_BUS_STOPS table (Relationship between ROUTE and BUSSTOP)
+CREATE TABLE ROUTE_BUS_STOPS (
+                                 ID VARCHAR(50),
+                                 TEST_ENTITY BOOLEAN,
+                                 ROUTE_ID VARCHAR(50),
+                                 BUSSTOP_ID VARCHAR(50),
+                                 COLLEGE_ID VARCHAR(50),
+                                 BUS_ID VARCHAR(50),
+                                 BUSSTOP_ORDER INT,
+                                 CREATED_TIME TIMESTAMP,
+                                 LAST_MODIFIED_TIME TIMESTAMP,
+                                 CREATED_BY VARCHAR(50),
+                                 LAST_MODIFIED_BY VARCHAR(50),
+                                 TENANT VARCHAR(50),
+                                 VERSION INT,
+                                 PRIMARY KEY (ROUTE_ID, BUSSTOP_ID, COLLEGE_ID),
+                                 FOREIGN KEY (ROUTE_ID) REFERENCES ROUTE(ID),
+                                 FOREIGN KEY (BUSSTOP_ID) REFERENCES BUSSTOP(ID),
+                                 FOREIGN KEY (COLLEGE_ID) REFERENCES college(ID),
+                                 FOREIGN KEY (BUS_ID) REFERENCES BUS(ID)
+);
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (4,'Amit','Mumbai',76,'9988765703','amit@mera.com');
+-- Create STUDENT table
+CREATE TABLE STUDENT (
+                         ID VARCHAR(50) PRIMARY KEY,
+                         TEST_ENTITY BOOLEAN,
+                         STUDENT_NAME VARCHAR(100),
+                         STUDENT_EMAIL VARCHAR(100),
+                         STUDENT_PHONE VARCHAR(20),
+                         STUDENT_ADDRESS VARCHAR(255),
+                         STUDENT_GENDER VARCHAR(10),
+                         STUDENT_SCHOOL VARCHAR(100),
+                         STUDENT_PASSWORD VARCHAR(100),
+                         STUDENT_BIRTHDAY DATE,
+                         SLA_LATE BOOLEAN,
+                         SLA_TENDING_LATE BOOLEAN,
+                         SLA_RED_DATE DATE,
+                         SLA_YELLOW_DATE DATE,
+                         STATE_ENTRY_TIME TIMESTAMP,
+                         VERSION INT,
+                         CREATED_TIME TIMESTAMP,
+                         LAST_MODIFIED_TIME TIMESTAMP,
+                         CREATED_BY VARCHAR(50),
+                         LAST_MODIFIED_BY VARCHAR(50),
+                         STATE_ID INT,
+                         TENANT VARCHAR(50)
+);
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (5,'Akash','Bangalore',66,'9988765704','akash@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (6,'Manjunath','Chennai',63,'9988765705','manjunath@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (7,'Kathy','Bangalore',59,'9988765706','kathy@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (8,'Kamala','Gurgaon',80,'9988765707','kamala@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (9,'Sudha','Kolkata',45,'9988765708','sudha@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (10,'Rajesh','Gulbarga',21,'9988765709','rajesh@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (11,'Srinivas','Chandigarh',77,'9988765710','srinivas@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (12,'Sam','Hyderabad',76,'9988765711','sam@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (13,'Gurupreet','Delhi',45,'9988765712','gurupreet@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (14,'Rashmi','Mumbai',90,'9988765713','rashmi@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (15,'Rahul','Delhi',48,'9988765714','rahul@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (16,'Gopi','Trivandrum',99,'9988765715','gopi@mera.com');
+-- Create ATTENDANCE table
+CREATE TABLE ATTENDANCE (
+                            ID VARCHAR(50) PRIMARY KEY,
+                            TEST_ENTITY BOOLEAN,
+                            BUS_ID VARCHAR(50),
+                            CURRENT_ATTENDANCE INT,
+                            SLA_LATE BOOLEAN,
+                            SLA_TENDING_LATE BOOLEAN,
+                            SLA_RED_DATE DATE,
+                            SLA_YELLOW_DATE DATE,
+                            STATE_ENTRY_TIME TIMESTAMP,
+                            VERSION INT,
+                            CREATED_TIME TIMESTAMP,
+                            LAST_MODIFIED_TIME TIMESTAMP,
+                            CREATED_BY VARCHAR(50),
+                            LAST_MODIFIED_BY VARCHAR(50),
+                            STATE_ID INT,
+                            TENANT VARCHAR(50),
+                            FOREIGN KEY (BUS_ID) REFERENCES BUS(ID)
+);
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (17,'Honey','Delhi',73,'9988765716','honey@mera.com');
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (18,'Vikas','Bangalore',65,'9988765717','vikas@mera.com');
+INSERT INTO college
+(SLA_LATE, SLA_TENDING_LATE, SLA_RED_DATE, SLA_YELLOW_DATE,college_address, college_email, college_name, college_phone, created_by, created_time, id, last_modified_by, last_modified_time, tenant, test_entity, version)
+VALUES
+    (TRUE, FALSE, '2024-12-15', '2024-12-10','123 Main St, College Town, TX', 'info@collegetown.edu', 'College Town University', '123-456-7890', 'admin', '2024-12-01 08:00:00', '1', 'admin', '2024-12-01 09:00:00', 'default', false, 1),
+    (TRUE, FALSE, '2024-12-15', '2024-12-10','456 Elm St, Cityville, TX', 'contact@cityville.edu', 'Cityville College', '234-567-8901', 'admin', '2024-12-02 10:00:00', '2', 'admin', '2024-12-02 11:00:00', 'default', false, 1),
+    (TRUE, FALSE, '2024-12-15', '2024-12-10','789 Oak Rd, Suburbia, TX', 'hello@suburbia.edu', 'Suburbia Institute', '345-678-9012', 'admin', '2024-12-03 12:00:00', '3', 'admin', '2024-12-03 13:00:00', 'default', false, 1),
+    (TRUE, FALSE, '2024-12-15', '2024-12-10','101 Pine Blvd, Metroville, TX', 'contact@metroville.edu', 'Metroville University', '456-789-0123', 'admin', '2024-12-04 14:00:00', '4', 'admin', '2024-12-04 15:00:00', 'default', false, 1),
+    (TRUE, FALSE, '2024-12-15', '2024-12-10','202 Maple Ave, Uptown, TX', 'support@uptown.edu', 'Uptown College', '567-890-1234', 'admin', '2024-12-05 16:00:00', '5', 'admin', '2024-12-05 17:00:00', 'default', false, 1);
+-- Insert data into ROUTE table
+INSERT INTO ROUTE (ID,ROUTE_CODE, test_entity,ROUTE_NAME, ROUTE_TYPE, ROUTE_DESC, SLA_LATE, SLA_TENDING_LATE, SLA_RED_DATE, SLA_YELLOW_DATE, STATE_ENTRY_TIME, VERSION, CREATED_TIME, LAST_MODIFIED_TIME, CREATED_BY, LAST_MODIFIED_BY, STATE_ID, TENANT)
+VALUES
+    ('1','R001',false, 'Route A', 'Express', 'Main road route with limited stops', TRUE, FALSE, '2024-12-15', '2024-12-10', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '1', 'Tenant1'),
+    ('2','R002', false,'Route B', 'Local', 'Route covering local streets and neighborhoods', FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '2', 'Tenant2'),
+    ('3','R003',false, 'Route C', 'Express', 'Route connecting city center to the suburbs', TRUE, TRUE, '2024-12-20', '2024-12-15', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '3', 'Tenant3'),
+    ('4','R004', false,'Route D', 'Local', 'Route through the downtown area with multiple stops', FALSE, FALSE, '2024-12-25', '2024-12-22', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '4', 'Tenant4'),
+    ('5','R005', false,'Route E', 'Express', 'Route connecting two major cities', TRUE, FALSE, '2024-12-30', '2024-12-28', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '5', 'Tenant5');
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (19,'Phani','Chennai',52,'9988765718','phani@mera.com');
+-- Insert data into BUSSTOP table
+INSERT INTO BUSSTOP (ID,BUSSTOP_CODE,test_entity, BUSSTOP_TYPE, BUSSTOP_NAME, LATITUDE, LONGITUDE, SLA_LATE, SLA_TENDING_LATE, SLA_RED_DATE, SLA_YELLOW_DATE, STATE_ENTRY_TIME, VERSION, CREATED_TIME, LAST_MODIFIED_TIME, CREATED_BY, LAST_MODIFIED_BY, STATE_ID, TENANT)
+VALUES
+    ('1','BS001',false, 'Standard', 'Main Street Station', 40.7128, -74.0060, TRUE, FALSE, '2024-12-15', '2024-12-10', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '1', 'Tenant1'),
+    ('2','BS002', false,'Standard', 'Central Park Stop', 40.7851, -73.9683, FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '2', 'Tenant2'),
+    ('3','BS003', false,'Standard', 'City Mall Stop', 40.7484, -73.9857, TRUE, TRUE, '2024-12-20', '2024-12-15', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '3', 'Tenant3'),
+    ('4','BS004', false,'Express', 'Downtown Center', 40.7306, -73.9352, FALSE, FALSE, '2024-12-25', '2024-12-22', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '4', 'Tenant4'),
+    ('5','BS005', false,'Express', 'Suburb Junction', 40.6536, -73.9082, TRUE, FALSE, '2024-12-30', '2024-12-28', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '5', 'Tenant5'),
+    ('6','BS006', false,'Standard', 'North Station', 40.7480, -73.9850, TRUE, FALSE, '2024-12-10', '2024-12-05', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '1', 'Tenant1'),
+    ('7','BS007', false,'Standard', 'West End Stop', 40.6784, -73.9447, FALSE, TRUE, '2024-12-12', '2024-12-08', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '2', 'Tenant2'),
+    ('8','BS008', false,'Express', 'Central Avenue Junction', 40.7220, -73.9955, TRUE, TRUE, '2024-12-17', '2024-12-14', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '3', 'Tenant3'),
+    ('9','BS009', false,'Express', 'Southend Plaza', 40.7416, -73.9333, FALSE, FALSE, '2024-12-22', '2024-12-18', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '4', 'Tenant4'),
+    ('10','BS010',false, 'Standard', 'East Ridge Stop', 40.6633, -73.9385, TRUE, FALSE, '2024-12-28', '2024-12-25', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '5', 'Tenant5');
+-- Insert data into BUS table
+INSERT INTO BUS (ID,LICENSE_PLATE,test_entity, CAPACITY, STATE_ID, TENANT, CREATED_TIME, LAST_MODIFIED_TIME, CREATED_BY, LAST_MODIFIED_BY,SLA_LATE, SLA_TENDING_LATE, SLA_RED_DATE, SLA_YELLOW_DATE, STATE_ENTRY_TIME, VERSION)
+VALUES
+    ('1','ABC123',false, 50,  'S1',  'Tenant1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1),
+    ('2','XYZ456',false, 45,  'S2',  'Tenant2', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1),
+    ('3','LMN789',false, 60,  'S3',  'Tenant3', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1),
+    ('4','PQR012',false, 55,  'S4',  'Tenant4', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1),
+    ('5','DEF345',false, 50,  'S5', 'Tenant5', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1);
 
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (20,'Ayush','Hyderabad',48,'9988765719','ayush@rashmkimera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (21,'Siddharth','Jaipur',97,'9988765720','siddharth@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (22,'Damodar','Delhi',12,'9988765721','damodar@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (23,'Sundar','Chennai',45,'9988765722','sundar@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (24,'Chetan','Mumbai',19,'9988765723','chetan@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (25,'Narendra','Mumbai',70,'9988765724','narendra@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (26,'Shankuntala','Bangalore',23,'9988765725','shankuntala@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (27,'Sohan','Chennai',50,'9988765726','sohan@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (28,'Roshan','Delhi',69,'9988765727','roshan@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (29,'Vijay','Bangalore',43,'9988765728','vijay@mera.com');
-INSERT INTO query (ID,name,branch,percentage,phone,email) VALUES (30,'Brijesh','Hyderabad',65,'9988765729','brijesh@mera.com');
+-- Insert data into ROUTE_BUS_STOPS table (Relationship between ROUTE and BUSSTOP)
+INSERT INTO ROUTE_BUS_STOPS (id,ROUTE_ID,  BUS_ID,  CREATED_TIME, LAST_MODIFIED_TIME, CREATED_BY, LAST_MODIFIED_BY, TENANT,test_entity,version)
+VALUES
+    ('1','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant1',false,1),
+    ('2','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant1',false,1),
+    ('3','2',  '2',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant2',false,1),
+    ('4','3',  '3',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant3',false,1),
+    ('5','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant1',false,1),
+    ('6','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant1',false,1),
+    ('7','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant1',false,1),
+    ('8','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant',false,1),
+    ('9','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant',false,1),
+    ('10','1',  '1',  CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin',  'Tenant',false,1);
+
+-- Insert data into STUDENT table
+INSERT INTO STUDENT (ID,test_entity,STUDENT_NAME, STUDENT_EMAIL, STUDENT_PHONE, STUDENT_ADDRESS, STUDENT_GENDER, STUDENT_SCHOOL, STUDENT_PASSWORD, STUDENT_BIRTHDAY, SLA_LATE, SLA_TENDING_LATE, SLA_RED_DATE, SLA_YELLOW_DATE, STATE_ENTRY_TIME, VERSION, CREATED_TIME, LAST_MODIFIED_TIME, CREATED_BY, LAST_MODIFIED_BY, STATE_ID, TENANT)
+VALUES
+    ('1',false,'John Doe', 'john.doe@school.com', '555-1234', '123 Elm Street', 'Male', 'School A', 'password123', '2005-06-15', TRUE, FALSE, '2024-12-15', '2024-12-10', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '1', 'Tenant1'),
+    ('2',false,'Jane Smith', 'jane.smith@school.com', '555-5678', '456 Oak Avenue', 'Female', 'School B', 'password456', '2006-07-20', FALSE, TRUE, '2024-12-18', '2024-12-12', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '2', 'Tenant2'),
+    ('3',false,'Mike Johnson', 'mike.johnson@school.com', '555-8765', '789 Pine Road', 'Male', 'School C', 'password789', '2007-08-10', TRUE, TRUE, '2024-12-20', '2024-12-15', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '3', 'Tenant3'),
+    ('4',false,'Emily Brown', 'emily.brown@school.com', '555-4321', '101 Maple Lane', 'Female', 'School D', 'password101', '2008-09-05', FALSE, FALSE, '2024-12-25', '2024-12-22', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '4', 'Tenant4'),
+    ('5',false,'David Lee', 'david.lee@school.com', '555-8764', '202 Birch Street', 'Male', 'School E', 'password202', '2009-10-12', TRUE, FALSE, '2024-12-30', '2024-12-28', CURRENT_TIMESTAMP, 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Admin', 'Admin', '5', 'Tenant5');
+
+
+-- Insert sample data for ATTENDANCE
+INSERT INTO ATTENDANCE (ID,test_entity,BUS_ID,  CURRENT_attendance, SLA_LATE, SLA_TENDING_LATE, SLA_RED_DATE, SLA_YELLOW_DATE, STATE_ENTRY_TIME, VERSION, CREATED_TIME, LAST_MODIFIED_TIME, CREATED_BY, LAST_MODIFIED_BY, STATE_ID, TENANT)
+VALUES
+    ('1',false,'1',   30, FALSE, FALSE, '2024-12-01', '2024-12-05', NOW(), 1, NOW(), NOW(), 'admin', 'admin', '1', 'tenantA'),
+    ('2',false,'1',   30, TRUE, FALSE, '2024-12-02', '2024-12-06', NOW(), 1, NOW(), NOW(), 'admin', 'admin', '1', 'tenantA'),
+    ('3',false,'2',   45, FALSE, TRUE, '2024-12-03', '2024-12-07', NOW(), 1, NOW(), NOW(), 'admin', 'admin', '1', 'tenantA'),
+    ('4',false,'3',   20, FALSE, FALSE, '2024-12-04', '2024-12-08', NOW(), 1, NOW(), NOW(), 'admin', 'admin', '1', 'tenantB'),
+    ('5',false,'3',   20, TRUE, TRUE, '2024-12-05', '2024-12-09', NOW(), 1, NOW(), NOW(), 'admin', 'admin', '2', 'tenantB'),
+    ('6',false,'4',   50, FALSE, FALSE, '2024-12-06', '2024-12-10', NOW(), 1, NOW(), NOW(), 'admin', 'admin', '2', 'tenantC'),
+    ('7',false,'5',   10, FALSE, FALSE, '2024-12-07', '2024-12-11', NOW(), 1, NOW(), NOW(), 'admin', 'admin', '2', 'tenantC');

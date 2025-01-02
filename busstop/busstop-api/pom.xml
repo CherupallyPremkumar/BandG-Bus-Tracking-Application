@@ -24,5 +24,10 @@
 			<groupId>org.chenile</groupId>
 			<artifactId>jpa-utils</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.bgbus.tracker</groupId>
+			<artifactId>core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -1,9 +1,0 @@
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/service/cmds/CloseBusstopAction.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/service/store/BusstopEntityStore.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/configuration/dao/BusstopRepository.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/service/cmds/ResolveBusstopAction.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/configuration/controller/BusstopController.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/service/cmds/AssignBusstopAction.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/service/healthcheck/BusstopHealthChecker.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/configuration/BusstopConfiguration.java
-/Users/premkumar/BandG-Bus-Tracking-Application/busstop/busstop-service/src/main/java/com/bgbus/tracker/busstop/service/errorcodes/ErrorCodes.java

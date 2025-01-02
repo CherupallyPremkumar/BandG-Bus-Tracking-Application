@@ -1,9 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-Route Service Implementations,com.bgbus.tracker.route.service.healthcheck,RouteHealthChecker,15,3,0,0,5,1,1,1,1,1
-Route Service Implementations,com.bgbus.tracker.route.configuration,RouteConfiguration,0,99,0,0,0,26,0,17,0,17
-Route Service Implementations,com.bgbus.tracker.route.service.errorcodes,ErrorCodes,21,0,0,0,6,0,3,0,3,0
-Route Service Implementations,com.bgbus.tracker.route.configuration.controller,RouteController,18,23,0,0,1,3,1,3,1,3
-Route Service Implementations,com.bgbus.tracker.route.service.cmds,AssignRouteAction,12,3,0,0,4,1,1,1,1,1
-Route Service Implementations,com.bgbus.tracker.route.service.cmds,CloseRouteAction,8,3,0,0,3,1,1,1,1,1
-Route Service Implementations,com.bgbus.tracker.route.service.cmds,ResolveRouteAction,8,3,0,0,3,1,1,1,1,1
-Route Service Implementations,com.bgbus.tracker.route.service.store,RouteEntityStore,7,21,1,1,1,5,1,3,0,3

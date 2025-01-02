@@ -14,7 +14,7 @@ public class ResolveRouteAction implements STMTransitionAction<Route>{
 	public void doTransition(Route route, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		MinimalPayload payload = (MinimalPayload) transitionParam;
-		route.resolveComment = payload.getComment();
+
 	}
 
 }

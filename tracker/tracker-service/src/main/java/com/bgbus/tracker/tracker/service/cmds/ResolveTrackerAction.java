@@ -14,7 +14,7 @@ public class ResolveTrackerAction implements STMTransitionAction<Tracker>{
 	public void doTransition(Tracker tracker, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		MinimalPayload payload = (MinimalPayload) transitionParam;
-		tracker.resolveComment = payload.getComment();
+
 	}
 
 }

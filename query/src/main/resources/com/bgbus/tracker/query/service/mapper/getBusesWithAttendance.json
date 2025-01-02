@@ -1,0 +1,26 @@
+[
+  {
+    "id": "getBusesWithAttendance.getAll",
+    "name": "getBusesWithAttendance",
+    "columnMetadata": {
+      "busStopName1" : {
+        "name": "busStopName1",
+        "filterable": true,
+        "containsQuery": true,
+        "likeQuery": true,
+        "columnType": "Text"
+      },
+      "busStopName2" : {
+        "name": "busStopName2",
+        "columnType" : "Text",
+        "likeQuery": true,
+        "containsQuery": true,
+        "filterable": true
+      }
+    },
+    "flexiblePropnames": false,
+    "paginated" : true,
+    "sortable" : true
+  }
+
+]

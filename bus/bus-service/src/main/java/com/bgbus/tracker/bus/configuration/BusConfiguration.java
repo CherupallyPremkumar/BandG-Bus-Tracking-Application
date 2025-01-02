@@ -1,5 +1,6 @@
 package com.bgbus.tracker.bus.configuration;
 
+import com.bgbus.tracker.bus.service.cmds.*;
 import org.chenile.stm.STM;
 import org.chenile.stm.action.STMTransitionAction;
 import org.chenile.stm.impl.BeanFactoryAdapter;
@@ -12,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 
 import org.chenile.utils.entity.service.EntityStore;
 import org.chenile.workflow.service.impl.StateEntityServiceImpl;
@@ -21,9 +21,6 @@ import org.chenile.workflow.service.stmcmds.GenericEntryAction;
 import org.chenile.workflow.service.stmcmds.GenericExitAction;
 import org.chenile.workflow.service.stmcmds.StmBodyTypeSelector;
 import com.bgbus.tracker.bus.model.Bus;
-import com.bgbus.tracker.bus.service.cmds.AssignBusAction;
-import com.bgbus.tracker.bus.service.cmds.CloseBusAction;
-import com.bgbus.tracker.bus.service.cmds.ResolveBusAction;
 import com.bgbus.tracker.bus.service.healthcheck.BusHealthChecker;
 import com.bgbus.tracker.bus.service.store.BusEntityStore;
 import org.chenile.workflow.api.WorkflowRegistry;
@@ -87,20 +84,35 @@ public class BusConfiguration {
 		return new StmBodyTypeSelector(busInfoProvider);
 	}
 	
-	@Bean @Autowired STMTransitionAction<Bus> busBaseTransitionAction(){
+	@Bean STMTransitionAction<Bus> busBaseTransitionAction(){
 		return new BaseTransitionAction<>();
 	}
 	
-	@Bean AssignBusAction assignBus() {
-		return new AssignBusAction();
+
+	@Bean
+	StartMaintenanceAction startMaintenanceAction()
+	{
+		return new StartMaintenanceAction();
 	}
-	
-	@Bean ResolveBusAction resolveBus() {
-		return new ResolveBusAction();
+	@Bean
+	CompleteMaintenanceAction completeMaintenanceAction()
+	{
+		return new CompleteMaintenanceAction();
 	}
-	
-	@Bean CloseBusAction closeBus() {
-		return new CloseBusAction();
+	@Bean
+	CompleteRepairAction completeRepairAction()
+	{
+		return new CompleteRepairAction();
+	}
+	@Bean
+	StartBreakAction startBreakAction()
+	{
+		return new StartBreakAction();
+	}
+	@Bean
+	TerminateBusAction terminateBusAction()
+	{
+		return new TerminateBusAction();
 	}
 
 	@Bean

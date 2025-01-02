@@ -14,8 +14,7 @@ public class AssignTrackerAction implements STMTransitionAction<Tracker>{
 	public void doTransition(Tracker tracker, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		AssignTrackerPayload payload = (AssignTrackerPayload) transitionParam;
-		tracker.assignee = payload.assignee;
-		tracker.assignComment = payload.getComment();
+
 	}
 
 }

@@ -14,8 +14,7 @@ public class AssignRouteAction implements STMTransitionAction<Route>{
 	public void doTransition(Route route, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		AssignRoutePayload payload = (AssignRoutePayload) transitionParam;
-		route.assignee = payload.assignee;
-		route.assignComment = payload.getComment();
+
 	}
 
 }

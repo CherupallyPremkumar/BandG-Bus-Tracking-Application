@@ -1,0 +1,30 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+
+
+spring:
+  profiles:
+    active: activatedProperties@
+
+query:
+  jpa:
+    hibernate:
+      show_sql: 'true'
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        format_sql: 'true'
+        dialect: org.hibernate.dialect.H2Dialect
+  datasource:
+    maximumPoolSize: '10'
+    type: com.zaxxer.hikari.HikariDataSource
+    username: demo
+    password: password
+    minimumIdle: '2'
+    idleTimeout: '5000'
+    jdbcUrl: jdbc:h2:mem:demo;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  mapperFiles: classpath*:com/netscoretech/pos/query/service/mapper/*.xml
+  definitionFiles: classpath*:com/netscoretech/pos/query/service/mapper/*.json

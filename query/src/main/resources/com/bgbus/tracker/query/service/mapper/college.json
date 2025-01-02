@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": "college.getAll",
+    "name": "college",
+    "columnMetadata": {
+      "collegeName" : {
+        "name": "collegeName",
+        "filterable": true,
+        "containsQuery": true,
+        "columnType": "Text"
+      }
+    },
+    "flexiblePropnames": false,
+    "paginated" : false,
+    "sortable" : false
+  }
+
+]

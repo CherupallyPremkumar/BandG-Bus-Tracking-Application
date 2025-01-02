@@ -14,7 +14,7 @@ public class CloseBusstopAction implements STMTransitionAction<Busstop>{
 	public void doTransition(Busstop busstop, Object transitionParam, State startState, String eventId,
 			State endState, STMInternalTransitionInvoker<?> stm, Transition transition) throws Exception {
 		MinimalPayload payload = (MinimalPayload) transitionParam;
-		busstop.closeComment = payload.getComment();
+
 	}
 
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="getBusesWithAttendance">
+
+    <resultMap id="AttendanceResultMap" type="map">
+        <id property="id" column="id"/>
+        <result property="capacity" column="capacity"/>
+        <result property="slaLate" column="sla_late"/>
+        <result property="slaTendingLate" column="sla_tending_late"/>
+        <result property="testEntity" column="test_entity"/>
+        <result property="createdTime" column="created_time"/>
+        <result property="lastModifiedTime" column="last_modified_time"/>
+        <result property="slaRedDate" column="sla_red_date"/>
+        <result property="slaYellowDate" column="sla_yellow_date"/>
+        <result property="stateEntryTime" column="state_entry_time"/>
+        <result property="version" column="version"/>
+        <result property="attendanceId" column="attendance_id"/>
+        <result property="createdBy" column="created_by"/>
+        <result property="flowId" column="flow_id"/>
+        <result property="lastModifiedBy" column="last_modified_by"/>
+        <result property="licensePlate" column="license_plate"/>
+        <result property="stateId" column="state_id"/>
+        <result property="tenant" column="tenant"/>
+        <result property="currentAttendance" column="CURRENT_Attendance"/>
+    </resultMap>
+
+    <select id="getAll" resultMap="AttendanceResultMap">
+        SELECT DISTINCT
+        b.*,
+        a.CURRENT_Attendance
+        FROM
+        BUS b
+        JOIN
+        ROUTE_BUS_STOPS rbs1 ON b.ID = rbs1.BUS_ID
+        JOIN
+        ROUTE_BUS_STOPS rbs2 ON rbs1.ROUTE_ID = rbs2.ROUTE_ID
+        JOIN
+        ATTENDANCE a ON a.BUS_ID = b.ID
+        JOIN
+        BUSSTOP bs1 ON rbs1.BUSSTOP_ID = bs1.ID
+        JOIN
+        BUSSTOP bs2 ON rbs2.BUSSTOP_ID = bs2.ID
+        <where>
+            <if test="busStopName1 != null">
+            and    bs1.BUSSTOP_NAME like #{busStopName1}
+            </if>
+            <if test="busStopName2 != null">
+             and   bs2.BUSSTOP_NAME like #{busStopName2}
+            </if>
+            AND rbs1.BUSSTOP_ORDER &lt; rbs2.BUSSTOP_ORDER
+        </where>
+        ${orderby} ${pagination}
+    </select>
+
+    <select id='getAll-count' resultType="int" >
+        SELECT
+        count(b.*)
+        FROM
+        BUS b
+        JOIN
+        ROUTE_BUS_STOPS rbs1 ON b.ID = rbs1.BUS_ID
+        JOIN
+        ROUTE_BUS_STOPS rbs2 ON rbs1.ROUTE_ID = rbs2.ROUTE_ID
+        JOIN
+        ATTENDANCE a ON a.BUS_ID = b.ID
+        JOIN
+        BUSSTOP bs1 ON rbs1.BUSSTOP_ID = bs1.ID
+        JOIN
+        BUSSTOP bs2 ON rbs2.BUSSTOP_ID = bs2.ID
+        <where>
+            <if test="busStopName1 != null">
+            and bs1.BUSSTOP_NAME like #{busStopName1}
+            </if>
+            <if test="busStopName2 != null">
+             and   bs2.BUSSTOP_NAME like #{busStopName2}
+            </if>
+            AND rbs1.BUSSTOP_ORDER &lt; rbs2.BUSSTOP_ORDER
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,59 @@
+logging:
+  level:
+    ROOT: INFO
+    org.hibernate.SQL: DEBUG
+    com.bgbus.tracker: INFO
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: false # we use Webpack dev server + BrowserSync for livereload
+  jackson:
+    serialization:
+      indent-output: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/BandGBus
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: create-drop  # Options: create, create-drop, update, none
+    show-sql: true
+    format-sql: true
+
+
+
+  liquibase:
+    contexts: dev, faker
+
+  messages:
+    cache-duration: PT1S # 1 second, see the ISO 8601 standard
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8002
+  error:
+    whitelabel:
+      enabled: false
+
+chenile:
+  security:
+    client:
+      id: "bg-client"
+      secret: "6SIXzf6Vj9ceCJ4Se3W4EHAMAPYOV1U4"
+    keycloak:
+       host: "http://localhost"
+       port: 8080
+       base:
+         realm: BandGBus
+
+  oauth2:
+    resourceserver:
+      jwt:
+        jwk-set-uri: http://localhost:8080/realms/BandGBus/protocol/openid-connect/certs

@@ -24,5 +24,25 @@
 			<groupId>org.chenile</groupId>
 			<artifactId>jpa-utils</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.bgbus.tracker.bus</groupId>
+			<artifactId>bus-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.bgbus.tracker.busstop</groupId>
+			<artifactId>busstop-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.bgbus.tracker.route</groupId>
+			<artifactId>route-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.bgbus.tracker</groupId>
+			<artifactId>core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
